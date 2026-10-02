@@ -649,10 +649,10 @@
     document.addEventListener('DOMContentLoaded', () => {
       app.init();
     });
-/* ===== ROTATIVIDADE: Card em Destaque na Página Inicial ===== */
+/* ===== ROTATIVIDADE + SETAS: Card em Destaque na Página Inicial ===== */
 
-// 1) A LISTA DOS PROFISSIONAIS QUE PAGARAM O DESTAQUE
-// >> Sempre que alguém assinar o plano pago, adicione um bloco novo aqui.
+// 1) LISTA DOS PROFISSIONAIS QUE PAGARAM O DESTAQUE
+// >> Adicione um bloco novo com vírgula no final do anterior para cada pagante.
 const featuredProfiles = [
   {
     nome: "Thayse Bianchin Rambo",
@@ -665,57 +665,82 @@ const featuredProfiles = [
     whatsapp: "55997052670",
     linkPerfil: "#perfil-thayse"
   }
-  // ,{  <-- para adicionar outro profissional, copie o bloco acima,
-  //    mude os dados e cole aqui com a vírgula na frente
-  // }
+  // ,{ nome: "...", foto: "...", abordagem: "...", crp: "...", descricao: "...",
+  //    tags: ["...", "..."], preco: "R$ ...", whatsapp: "55...", linkPerfil: "#perfil-..." }
 ];
 
-// 2) TEMPO DE ROTAÇÃO
-// >> 24 = troca 1x por dia | 6 = troca a cada 6 horas | 2 = a cada 2 horas
+// 2) TEMPO DA ROTAÇÃO AUTOMÁTICA (24 = 1x por dia | 6 = a cada 6h | 2 = a cada 2h)
 const ROTATION_HOURS = 6;
 const periodMs = ROTATION_HOURS * 60 * 60 * 1000;
 
-// 3) FUNÇÃO QUE ESCOLHE O PERFIL DA VEZ
-function getFeaturedProfile() {
-  if (featuredProfiles.length === 0) return null;
-  const index = Math.floor(Date.now() / periodMs) % featuredProfiles.length;
-  return featuredProfiles[index];
+// null = seguindo o relógio | número = modo manual (visitante clicou na seta)
+let currentIndex = null;
+
+// 3) QUAL POSIÇÃO DA LISTA DEVE APARECER AGORA
+function getFeaturedIndex() {
+  if (featuredProfiles.length === 0) return -1;
+  if (currentIndex !== null) return currentIndex;
+  return Math.floor(Date.now() / periodMs) % featuredProfiles.length;
 }
 
-// 4) MONTAR O CARD NA PÁGINA INICIAL
+// 4) MONTAR O CARD NA TELA (com as setas no final)
 function renderFeaturedCard() {
-  const profile = getFeaturedProfile();
-  if (!profile) return;
-
+  const index = getFeaturedIndex();
+  const profile = featuredProfiles[index];
   const card = document.getElementById("featuredPsychologistCard");
-  if (!card) return;
+  if (!card || !profile) return;
 
   card.innerHTML = `
-    <span class="badge-featured">★ Destaque PsiConecta</span>
-    <div class="profile-card-header">
-      <img src="${profile.foto}" alt="Foto de ${profile.nome}" class="profile-photo">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <span class="badge-featured">Profissional em Destaque</span>
+      <span class="badge-crp">Ativo ${profile.crp}</span>
+    </div>
+    <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
+      <div style="width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid #D6C7A9;flex-shrink:0;">
+        <img src="${profile.foto}" alt="${profile.nome}" style="width:100%;height:100%;object-fit:cover;">
+      </div>
       <div>
-        <h3 class="profile-card-name">${profile.nome}</h3>
-        <div class="profile-card-approach">${profile.abordagem}</div>
-        <span style="font-size: 0.76rem; color: #695944;">${profile.crp} • Online • Todo o Brasil</span>
+        <h3 style="margin:0;font-size:1.25rem;">${profile.nome}</h3>
+        <p style="margin:2px 0 0 0;font-size:0.85rem;color:var(--color-brown-mid);font-weight:600;">${profile.crp} • ${profile.abordagem}</p>
       </div>
     </div>
-    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
-      ${profile.descricao}
-    </p>
+    <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:14px;">${profile.descricao}</p>
     <div class="tag-cloud">
-      ${profile.tags.map(tag => `<span class="tag-item">${tag}</span>`).join("")}
+      ${profile.tags.map(t => `<span class="tag-item">${t}</span>`).join("")}
     </div>
     <div class="price-tag-row">
-      <span style="font-size: 0.82rem; color: var(--text-muted);">Investimento por sessão</span>
+      <span style="font-size:0.85rem;color:var(--text-muted);">Sessão individual (50 min)</span>
       <span class="price-value">${profile.preco}</span>
     </div>
-    <div class="card-actions-row">
-      <a href="${profile.linkPerfil}" class="btn-custom btn-secondary-soft">Ver perfil</a>
-      <a href="https://wa.me/${profile.whatsapp}?text=Olá! Encontrei seu perfil na PsiConecta e gostaria de agendar uma sessão." target="_blank" rel="noopener noreferrer" class="btn-custom btn-whatsapp">WhatsApp</a>
+    <div style="display:flex;gap:10px;">
+      <a href="${profile.linkPerfil}" class="btn-custom btn-secondary-soft" style="flex:1;font-size:0.85rem;">Ver Perfil</a>
+      <a href="https://wa.me/${profile.whatsapp}?text=Ol%C3%A1!%20Encontrei%20seu%20perfil%20na%20PsiConecta." target="_blank" rel="noopener noreferrer" class="btn-custom btn-whatsapp" style="flex:1;font-size:0.85rem;">WhatsApp</a>
     </div>
+    ${featuredProfiles.length > 1 ? `
+    <div class="featured-nav">
+      <button class="featured-arrow" id="featuredPrev" aria-label="Anterior">&#9664;</button>
+      <span class="featured-counter">${index + 1} / ${featuredProfiles.length}</span>
+      <button class="featured-arrow" id="featuredNext" aria-label="Próximo">&#9654;</button>
+    </div>
+    ` : ""}
   `;
+
+  if (featuredProfiles.length > 1) {
+    document.getElementById("featuredPrev").addEventListener("click", () => navigateFeatured(-1));
+    document.getElementById("featuredNext").addEventListener("click", () => navigateFeatured(1));
+  }
 }
 
-// 5) RODA ASSIM QUE A PÁGINA CARREGA
+// 5) NAVEGAR COM AS SETAS (ativa o modo manual para este visitante)
+function navigateFeatured(direction) {
+  if (featuredProfiles.length === 0) return;
+  const base = currentIndex !== null ? currentIndex : Math.floor(Date.now() / periodMs) % featuredProfiles.length;
+  currentIndex = (base + direction + featuredProfiles.length) % featuredProfiles.length;
+  renderFeaturedCard();
+}
+
+// 6) RODAR AO CARREGAR + ATUALIZAR A CADA MINUTO (só no modo automático)
 document.addEventListener("DOMContentLoaded", renderFeaturedCard);
+setInterval(() => {
+  if (currentIndex === null) renderFeaturedCard();
+}, 60000);

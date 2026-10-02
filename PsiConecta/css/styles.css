@@ -54,17 +54,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; display: block; }
-
 .shell-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 .shell-section { padding: calc(var(--space) * 2) 0; }
 .shell-grid { display: grid; gap: var(--space); grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .shell-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: var(--space); }
 .shell-footer { padding: 24px 0 40px; color: var(--text-muted); font-size: 13px; }
-
 .shell-hero { padding: calc(var(--space) * 3) 0 calc(var(--space) * 2); }
 .shell-hero h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.15; margin: 0 0 10px; text-wrap: balance; }
 .shell-hero p { color: var(--text-muted); max-width: 60ch; margin: 0; }
-
 .panel {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -72,14 +69,12 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow);
   padding: var(--space);
 }
-
 .kpi { display: flex; flex-direction: column; gap: 4px; }
 .kpi .kpi-value { font-size: 28px; font-weight: 650; line-height: 1.1; }
 .kpi .kpi-label { font-size: 13px; color: var(--text-muted); }
 .kpi .kpi-delta { font-size: 12.5px; font-weight: 600; }
 .kpi .kpi-delta.up { color: #0a8f3c; }
 .kpi .kpi-delta.down { color: #cf3131; }
-
 table.shell-table { border-collapse: collapse; width: 100%; font-size: 14px; }
 table.shell-table th {
   text-align: left; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase;
@@ -88,10 +83,8 @@ table.shell-table th {
 table.shell-table th, table.shell-table td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--border); }
 table.shell-table td.num, table.shell-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
 table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
-
 .chart-box { width: 100%; min-height: 220px; }
 .chart-box svg { width: 100%; height: auto; display: block; }
-
 .muted { color: var(--text-muted); }
 .accent { color: var(--accent-text); }
 .shell-badge {
@@ -99,14 +92,11 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
   background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent-text);
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .shell-fade { animation: shell-fade 400ms ease both; }
   @keyframes shell-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 }
-
 /* ===== Estilos específicos da PsiConecta ===== */
-
 :root {
       --bg: #F5EDDC;
       --surface: #FFFFFF;
@@ -126,7 +116,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       --font-serif: 'Fraunces', Georgia, serif;
       --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     }
-
     body {
       font-family: var(--font-sans);
       background-color: var(--bg);
@@ -138,14 +127,12 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       display: flex;
       flex-direction: column;
     }
-
     h1, h2, h3, .serif-title {
       font-family: var(--font-serif);
       color: var(--color-brown-dark);
       letter-spacing: -0.02em;
       font-weight: 600;
     }
-
     /* Emergency Alert Bar (CVV 188) */
     .emergency-topbar {
       background: #4A3E2D;
@@ -164,7 +151,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       text-decoration: underline;
       font-weight: 700;
     }
-
     /* Header & Navigation */
     .site-header {
       background: rgba(255, 255, 255, 0.94);
@@ -216,7 +202,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       font-weight: 400;
       font-style: italic;
     }
-
     .main-nav {
       display: flex;
       align-items: center;
@@ -239,7 +224,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       color: var(--color-brown-dark);
       background: var(--color-yellow-soft);
     }
-
     .mobile-menu-btn {
       display: none;
       background: transparent;
@@ -249,7 +233,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       cursor: pointer;
       color: var(--color-brown-dark);
     }
-
     /* Views System */
     .view-container {
       flex: 1;
@@ -263,7 +246,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     /* Base Buttons & Badges */
     .btn-custom {
       display: inline-flex;
@@ -308,7 +290,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       background: #20BA5A;
       color: #04250D;
     }
-
     .badge-crp {
       display: inline-flex;
       align-items: center;
@@ -335,7 +316,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       font-size: 0.78rem;
       font-weight: 700;
     }
-
     /* Page Wrappers */
     .section-wrap {
       max-width: 1140px;
@@ -355,7 +335,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       color: var(--text-muted);
       font-size: 1.05rem;
     }
-
     /* Cards */
     .psi-card {
       background: var(--surface);
@@ -369,7 +348,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       border-color: #CDBDA0;
       box-shadow: 0 8px 24px rgba(92, 79, 58, 0.08);
     }
-
     /* Home Hero */
     .hero-banner {
       background: linear-gradient(180deg, #F5EDDC 0%, #FAF4E9 100%);
@@ -416,7 +394,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       align-items: center;
       gap: 6px;
     }
-
     .hero-card-preview {
       background: #FFFFFF;
       border: 1px solid var(--border);
@@ -425,7 +402,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       box-shadow: 0 16px 32px rgba(92, 79, 58, 0.08);
       position: relative;
     }
-
     /* Quick Filter Chips */
     .quick-chips-section {
       background: #FFFFFF;
@@ -462,7 +438,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       background: var(--color-yellow-soft);
       border-color: #E0CFA0;
     }
-
     /* Steps Grid */
     .steps-grid {
       display: grid;
@@ -501,7 +476,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       color: var(--text-muted);
       margin: 0;
     }
-
     /* Trust Pillars Grid */
     .pillars-grid {
       display: grid;
@@ -536,7 +510,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       font-size: 0.92rem;
       color: var(--text-muted);
     }
-
     /* Dual CTA Section */
     .dual-cta-section {
       background: #EAE1CF;
@@ -561,7 +534,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       margin-top: 0;
       font-size: 1.35rem;
     }
-
     /* Testimonials Placeholder Box */
     .testimonials-wrap {
       background: #FFFFFF;
@@ -583,7 +555,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       color: var(--color-brown-dark);
       margin-bottom: 12px;
     }
-
     /* Psychologists Directory */
     .directory-filters {
       background: #FFFFFF;
@@ -646,7 +617,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       height: 14px;
       color: var(--text-muted);
     }
-
     .psychologists-list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -677,6 +647,14 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       gap: 14px;
       align-items: center;
       margin-bottom: 16px;
+    }
+    .profile-photo {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #E8D395;
+      flex-shrink: 0;
     }
     .avatar-monogram {
       width: 58px;
@@ -748,7 +726,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       font-size: 0.85rem;
       padding: 8px 12px;
     }
-
     /* Psychologist Profile View */
     .profile-full-layout {
       display: grid;
@@ -789,7 +766,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       color: var(--color-brown-dark);
       text-align: right;
     }
-
     /* Pricing Plans for Psychologists */
     .plans-grid {
       display: grid;
@@ -844,7 +820,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       font-weight: 800;
       flex-shrink: 0;
     }
-
     /* Accordion */
     .accordion-group {
       max-width: 840px;
@@ -894,7 +869,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
     .accordion-item.open .accordion-content {
       display: block;
     }
-
     /* Legal & Editorial Text Layout */
     .legal-content-card {
       background: #FFFFFF;
@@ -921,7 +895,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       font-family: monospace;
       font-size: 0.88rem;
     }
-
     /* Crisis Emergency Box */
     .crisis-callout-card {
       background: #FFF5F2;
@@ -956,7 +929,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       font-size: 0.92rem;
       color: #61271D;
     }
-
     /* Footer */
     .site-footer {
       background: #473C2C;
@@ -1024,7 +996,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       align-items: center;
       gap: 12px;
     }
-
     /* Responsive */
     @media (max-width: 992px) {
       .hero-container {
@@ -1046,7 +1017,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
         position: static;
       }
     }
-
     @media (max-width: 768px) {
       .main-nav {
         display: none;
@@ -1079,13 +1049,11 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
         font-size: 1.8rem;
       }
     }
-
     /* Accessibility focus ring */
     a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
       outline: 2px solid var(--color-brown-dark);
       outline-offset: 2px;
     }
-
     /* Auth, Plans & Dashboard Specific Styles */
     .form-card {
       background: #FFFFFF;
@@ -1213,7 +1181,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       font-size: 0.84rem;
       color: var(--text-muted);
     }
-
     /* Notice callout & security pills */
     .notice-box {
       border-radius: 12px;
@@ -1246,7 +1213,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       color: var(--color-brown-dark);
       font-size: 0.8rem;
     }
-
     /* Psychologist Dashboard */
     .dashboard-header {
       background: #FFFFFF;
@@ -1299,7 +1265,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       display: block;
       animation: fadeIn 0.2s ease-out;
     }
-
     /* MP badge in plans */
     .mp-security-badge {
       display: inline-flex;
@@ -1319,7 +1284,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   flex-direction: column;
   line-height: 1.1;
 }
-
 .brand-text span {
   display: block;
   line-height: 1.2;
@@ -1332,7 +1296,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   align-items: center;
   gap: 6px;              /* distância entre os itens (ajuste se ficar largo demais) */
 }
-
 .main-nav .nav-link {
   display: inline-flex;  /* vira uma "caixa" flexível */
   align-items: center;   /* centraliza verticalmente */
@@ -1340,7 +1303,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   text-align: center;
   padding: 8px 12px;     /* respiro igual dos dois lados — texto sempre no meio */
 }
-
 .main-nav .btn-custom {
   display: inline-flex;
   align-items: center;
@@ -1357,7 +1319,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   max-width: 920px;           /* largura máxima da grade */
   margin: 0 auto;             /* centraliza a grade na página */
 }
-
 .plans-grid .plan-card {
   flex: 1 1 340px;            /* cada card cresce, mas nunca fica fino demais */
   max-width: 440px;           /* nem largo demais */
@@ -1372,7 +1333,6 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   padding-top: 14px;
   border-top: 1px solid var(--border);
 }
-
 .featured-arrow {
   width: 36px;
   height: 36px;
@@ -1387,13 +1347,11 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   justify-content: center;
   transition: all 0.2s ease;
 }
-
 .featured-arrow:hover {
   background: var(--color-brown-dark);
   color: #FFFFFF;
   border-color: var(--color-brown-dark);
 }
-
 .featured-counter {
   font-size: 0.85rem;
   color: var(--text-muted);

@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsiConecta — Plataforma de Psicoterapia Online</title>
+  
+  <!-- Basecoat & Shell -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basecoat-css@1.0.2/dist/basecoat.cdn.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+<body>
+
+  <!-- Aviso Superior de Apoio Imediato CVV 188 -->
+  <aside class="emergency-topbar" aria-label="Aviso de Emergência">
+    <span>Precisa de ajuda imediata ou está em crise emocional? Ligue gratuitamente para o <strong>CVV no número 188</strong> (24h) ou acesse <a href="https://www.cvv.org.br" target="_blank" rel="noopener noreferrer">cvv.org.br</a>.</span>
+  </aside>
+
+  <!-- Cabeçalho Principal -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#home" class="brand-logo" title="PsiConecta - Início">
+        <div class="brand-mark">Ψ</div>
+        <div class="brand-text">PsiConecta <span>psicoterapia</span></div>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Abrir menu de navegação">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+
+      <nav class="main-nav" id="mainNavigation" aria-label="Navegação Principal">
+        <a href="#home" class="nav-link" data-route="home">Início</a>
+        <a href="#psicologos" class="nav-link" data-route="psicologos">Psicólogos</a>
+        <a href="#para-pacientes" class="nav-link" data-route="para-pacientes">Para Pacientes</a>
+        <a href="#para-psicologos" class="nav-link" data-route="para-psicologos">Para Psicólogos</a>
+        <a href="#sobre" class="nav-link" data-route="sobre">Sobre Nós</a>
+        <a href="#faq" class="nav-link" data-route="faq">Dúvidas (FAQ)</a>
+        <a href="#login" class="nav-link" data-route="login" id="navPsicologoLink" style="color: var(--color-brown-dark); font-weight: 700;">Área do Psicólogo</a>
+        <a href="#psicologos" class="btn-custom btn-primary-brown" style="font-size: 0.84rem; padding: 7px 16px; margin-left: 8px;">Encontrar Psicólogo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== VIEW 1: HOME ==================== -->
+    <section id="view-home" class="view-container active">
+      <!-- Hero -->
+      <div class="hero-banner">
+        <div class="hero-container">
+          <div class="hero-content">
+            <span class="badge-crp" style="margin-bottom: 14px;">Registro CRP Verificado</span>
+            <h1>Cuidado humanizado e acolhimento psicológico de onde você estiver</h1>
+            <p class="hero-subtitle">
+              Conectamos você a psicólogos credenciados para atendimento online seguro, com sigilo ético absoluto e contato direto pelo WhatsApp.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#psicologos" class="btn-custom btn-primary-brown">Buscar psicólogo agora</a>
+              <a href="#para-psicologos" class="btn-custom btn-secondary-soft">Sou psicólogo(a)</a>
+            </div>
+            <div class="hero-trust-row">
+              <div class="hero-trust-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A6A4F" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Sigilo e Ética CFP</span>
+              </div>
+              <div class="hero-trust-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A6A4F" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <span>Atendimento 100% Online</span>
+              </div>
+              <div class="hero-trust-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A6A4F" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span>Contato Direto</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card-preview">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-featured">Profissional em Destaque</span>
+              <span class="badge-crp">Ativo CRP 07</span>
+            </div>
+            <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
+              <div class="avatar-monogram thayse">TB</div>
+              <div>
+                <h3 style="margin: 0; font-size: 1.25rem;">Thayse Bianchin Rambo</h3>
+                <p style="margin: 2px 0 0 0; font-size: 0.85rem; color: var(--color-brown-mid); font-weight: 600;">CRP 07/32555 • TCC</p>
+              </div>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">
+              Atendimento acolhedor baseado em evidências científicas. Especialista no manejo de Ansiedade, TDAH, Depressão e Relacionamentos.
+            </p>
+            <div class="price-tag-row">
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Sessão individual (50 min)</span>
+              <span class="price-value">R$ 150,00</span>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <a href="#perfil-thayse" class="btn-custom btn-secondary-soft" style="flex: 1; font-size: 0.85rem;">Ver Perfil</a>
+              <a href="https://wa.me/55997052670?text=Ol%C3%A1%2C%20Thayse!%20Encontrei%20seu%20perfil%20na%20plataforma%20PsiConecta%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento." target="_blank" rel="noopener noreferrer" class="btn-custom btn-whatsapp" style="flex: 1; font-size: 0.85rem;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Chips Topics -->
+      <section class="quick-chips-section">
+        <div class="chips-wrapper">
+          <span class="chips-label">Temas Frequentes:</span>
+          <a href="#psicologos?filtro=Ansiedade" class="topic-chip" onclick="app.filtrarPorTema('Ansiedade')">Ansiedade</a>
+          <a href="#psicologos?filtro=Depressão" class="topic-chip" onclick="app.filtrarPorTema('Depressão')">Depressão</a>
+          <a href="#psicologos?filtro=Luto" class="topic-chip" onclick="app.filtrarPorTema('Luto')">Luto</a>
+          <a href="#psicologos?filtro=Casais" class="topic-chip" onclick="app.filtrarPorTema('Casais')">Terapia de Casal</a>
+          <a href="#psicologos?filtro=TDAH" class="topic-chip" onclick="app.filtrarPorTema('TDAH')">TDAH</a>
+          <a href="#psicologos?filtro=Relacionamentos" class="topic-chip" onclick="app.filtrarPorTema('Relacionamentos')">Relacionamentos</a>
+        </div>
+      </section>
+
+      <!-- 4 Passos de Funcionamento -->
+      <section class="section-wrap">
+        <div class="section-header-center">
+          <h2>Como a PsiConecta funciona</h2>
+          <p>Um fluxo simples, transparente e sem burocracias para você iniciar seu processo terapêutico com autonomia.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-box">
+            <div class="step-number">1</div>
+            <h4>Explore os Perfis</h4>
+            <p>Navegue pelo diretório e conheça psicólogos com registro ativo e abordagens diversas de acordo com sua necessidade.</p>
+          </div>
+          <div class="step-box">
+            <div class="step-number">2</div>
+            <h4>Escolha a Abordagem</h4>
+            <p>Filtre por demandas específicas: ansiedade, relacionamentos, luto, foco ou desenvolvimento pessoal.</p>
+          </div>
+          <div class="step-box">
+            <div class="step-number">3</div>
+            <h4>Conecte via WhatsApp</h4>
+            <p>Clique no botão e fale direto com o profissional, combinando horários, valores e tirando dúvidas iniciais.</p>
+          </div>
+          <div class="step-box">
+            <div class="step-number">4</div>
+            <h4>Inicie sua Terapia</h4>
+            <p>Realize suas sessões online com sigilo ético respaldado pelas normas do Conselho Federal de Psicologia.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diferenciais de Confiança -->
+      <section style="background: #FFFFFF; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 50px 20px;">
+        <div class="section-wrap" style="padding: 0;">
+          <div class="section-header-center">
+            <h2>Por que escolher a PsiConecta?</h2>
+            <p>Construída com foco no acolhimento de pacientes e no respeito incondicional à categoria da psicologia.</p>
+          </div>
+
+          <div class="pillars-grid">
+            <div class="pillar-card">
+              <div class="pillar-icon">✓</div>
+              <h3>CRP Sempre Verificado</h3>
+              <p>Todos os profissionais cadastrados passam por verificação prévia de registro ativo no respectivo Conselho Regional de Psicologia.</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🔒</div>
+              <h3>Sigilo Ético Absoluto</h3>
+              <p>Respeito irrestrito ao Código de Ética Profissional do Psicólogo e à Lei Geral de Proteção de Dados (LGPD).</p>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">💬</div>
+              <h3>Sem Intermediários Rígidos</h3>
+              <p>O contato entre você e o psicólogo é direto. Sem taxas escondidas, sem retenção de dados clínicos em nossa plataforma.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chamada de Ação Dupla -->
+      <section class="section-wrap">
+        <div class="dual-cta-section">
+          <div class="cta-column">
+            <div>
+              <span class="badge-crp" style="margin-bottom: 8px;">Para quem busca cuidado</span>
+              <h3>Encontre um profissional alinhado à sua jornada</h3>
+              <p style="color: var(--text-muted); font-size: 0.94rem; margin-bottom: 24px;">
+                Dê o primeiro passo com segurança. Encontre horários flexíveis e profissionais experientes prontos para lhe ouvir.
+              </p>
+            </div>
+            <a href="#psicologos" class="btn-custom btn-primary-brown">Explorar psicólogos</a>
+          </div>
+
+          <div class="cta-column">
+            <div>
+              <span class="badge-featured" style="margin-bottom: 8px;">Para psicólogos e psicólogas</span>
+              <h3>Divulgue sua prática clínica com dignidade</h3>
+              <p style="color: var(--text-muted); font-size: 0.94rem; margin-bottom: 24px;">
+                Sem concorrência predatória nem taxas abusivas. Conecte-se com novos pacientes de forma ética e transparente.
+              </p>
+            </div>
+            <a href="#para-psicologos" class="btn-custom btn-secondary-soft">Conhecer planos para psicólogos</a>
+          </div>
+        </div>
+
+        <!-- Seção de Depoimentos Transparente -->
+        <div class="testimonials-wrap">
+          <p class="tag">Espaço de Transparência</p>
+          <h4 style="margin: 0 0 8px 0; color: var(--color-brown-dark); font-size: 1.15rem;">Depoimentos da Comunidade</h4>
+          <p style="font-size: 0.92rem; color: var(--text-muted); max-width: 580px; margin: 0 auto;">
+            Em respeito às diretrizes do CFP sobre publicidade ética e sigilo clínico de pacientes, este espaço apresentará relatos e percepções de forma anônima e devidamente autorizada.
+          </p>
+          <div style="margin-top: 16px; font-size: 0.84rem; font-style: italic; color: #8A7B66;">
+            [Depoimento real em breve — Área em conformidade com as resoluções éticas vigentes]
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ==================== VIEW 2: DIRETÓRIO DE PSICÓLOGOS ==================== -->
+    <section id="view-psicologos" class="view-container">
+      <div class="section-wrap">
+        <div class="section-header-center">
+          <h2>Diretório de Psicólogos Credenciados</h2>
+          <p>Selecione um profissional por área de especialidade, leia a biografia e inicie uma conversa diretamente no WhatsApp.</p>
+        </div>
+
+        <!-- Barra de Filtros e Busca -->
+        <div class="directory-filters">
+          <div class="filter-chips-bar" id="filterChipsContainer">
+            <button class="filter-btn active" data-filter="todos">Todos</button>
+            <button class="filter-btn" data-filter="Ansiedade">Ansiedade</button>
+            <button class="filter-btn" data-filter="Depressão">Depressão</button>
+            <button class="filter-btn" data-filter="Luto">Luto</button>
+            <button class="filter-btn" data-filter="Casais">Casais</button>
+            <button class="filter-btn" data-filter="TDAH">TDAH</button>
+            <button class="filter-btn" data-filter="Relacionamentos">Relacionamentos</button>
+          </div>
+
+          <div class="search-input-box">
+            <svg class="search-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <input type="text" id="searchInput" placeholder="Buscar por nome ou abordagem...">
+          </div>
+        </div>
+
+        <!-- Lista de Cards -->
+<div class="psychologists-list" id="psychologistsGrid">
+
+  <!-- Card 1: Chamada para Cadastro (Apareça aqui) -->
+  <article class="psychologist-card cta-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 2px dashed #C9B896; background: #FBF7EF;">
+    <div style="font-size: 2.4rem; line-height: 1; margin-bottom: 10px;">👋</div>
+    <h3 class="profile-card-name" style="font-size: 1.3rem; margin-bottom: 6px;">Apareça aqui</h3>
+    <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 260px; margin: 0 0 18px; line-height: 1.5;">
+      É psicólogo(a)? Cadastre-se na PsiConecta, crie seu perfil e receba novos pacientes.
+    </p>
+    <a href="https://forms.gle/COLE-SEU-LINK-AQUI" target="_blank" rel="noopener noreferrer" class="btn-custom btn-secondary-soft">Quero me cadastrar</a>
+    <span style="font-size: 0.75rem; color: #8A7A64; margin-top: 12px;">Cadastro rápido • 2 minutos</span>
+  </article>
+
+  <!-- Card 2: Thayse Bianchin Rambo (Perfil Principal) -->
+<article class="psychologist-card is-featured" data-specialties="Ansiedade,TDAH,Depressão,Relacionamentos" data-name="Thayse Bianchin Rambo" data-approach="TCC Terapia Cognitivo-Comportamental">
+  <div>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+      <span class="badge-featured" style="white-space: nowrap; width: fit-content; text-align: center; padding: 6px 12px;">★ Destaque PsiConecta</span>
+      <span class="badge-crp" style="white-space: nowrap; width: fit-content; text-align: center; padding: 6px 12px;">Ativo CRP 07/32555</span>
+    </div>
+    <div class="profile-card-header">
+      <div class="avatar-monogram thayse" style="display: none;">TB</div>
+      <img src="assets/fotos/thayse-bianchin-rambo.jpg" alt="Foto de Thayse Bianchin Rambo" class="profile-photo" onerror="this.remove(); this.previousElementSibling.style.display = 'flex';">
+      <div>
+        <h3 class="profile-card-name">Thayse Bianchin Rambo</h3>
+        <div class="profile-card-approach">Terapia Cognitivo-Comportamental (TCC)</div>
+        <span style="font-size: 0.76rem; color: #695944;">Online • Todo o Brasil</span>
+      </div>
+    </div>
+
+    <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">
+      Prática clínica humanizada orientada a resultados e autonomia emocional. Atendimento individual para jovens e adultos.
+    </p>
+
+    <div class="tag-cloud">
+      <span class="tag-item">Ansiedade</span>
+      <span class="tag-item">TDAH</span>
+      <span class="tag-item">Depressão</span>
+      <span class="tag-item">Relacionamentos</span>
+    </div>
+  </div>
+
+  <div>
+    <div class="price-tag-row">
+      <span style="font-size: 0.82rem; color: var(--text-muted);">Investimento por sessão</span>
+      <span class="price-value">R$ 150,00</span>
+    </div>
+    <div class="card-actions-row" style="display: flex; gap: 8px;">
+      <a href="#perfil-thayse" class="btn-custom btn-secondary-soft" style="flex: 1; text-align: center; white-space: nowrap;">Ver perfil</a>
+      <a href="https://wa.me/55997052670?text=Ol%C3%A1%2C%20Thayse!%20Encontrei%20seu%20perfil%20na%20plataforma%20PsiConecta%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento." target="_blank" rel="noopener noreferrer" class="btn-custom btn-whatsapp" style="flex: 1; text-align: center; white-space: nowrap;">WhatsApp</a>
+    </div>
+  </div>
+</article>
+
+        <div id="noResultsAlert" style="display: none; text-align: center; padding: 40px; background: #FFF; border-radius: 16px; margin-top: 20px; border: 1px solid var(--border);">
+          <p style="margin: 0; color: var(--text-muted);">Nenhum psicólogo encontrado com os filtros selecionados. Tente limpar os filtros ou buscar outro termo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 3: PERFIL DO PROFISSIONAL (Thayse Bianchin Rambo) ==================== -->
+    <section id="view-perfil-thayse" class="view-container">
+      <div class="section-wrap">
+        <div style="margin-bottom: 24px;">
+          <a href="#psicologos" class="btn-custom btn-secondary-soft" style="font-size: 0.84rem; padding: 6px 14px;">
+            ← Voltar para o diretório
+          </a>
+        </div>
+
+        <div class="profile-full-layout">
+          <!-- Coluna Lateral (Resumo & CTA) -->
+          <aside class="profile-sidebar">
+            <div style="text-align: center; margin-bottom: 20px;">
+              <div class="avatar-monogram thayse" style="width: 88px; height: 88px; font-size: 2rem; margin: 0 auto 16px auto;">TB</div>
+              <h2 style="font-size: 1.4rem; margin: 0 0 4px 0;">Thayse Bianchin Rambo</h2>
+              <div style="font-size: 0.88rem; color: var(--color-brown-mid); font-weight: 700; margin-bottom: 8px;">
+                CRP 07/32555 • RS
+              </div>
+              <span class="badge-crp">✓ Registro Ativo no Conselho</span>
+            </div>
+
+            <ul class="profile-spec-list">
+              <li>
+                <span style="color: var(--text-muted);">Modalidade:</span>
+                <span class="val">Online (Vídeo)</span>
+              </li>
+              <li>
+                <span style="color: var(--text-muted);">Idioma:</span>
+                <span class="val">Português</span>
+              </li>
+              <li>
+                <span style="color: var(--text-muted);">Público:</span>
+                <span class="val">Jovens e Adultos</span>
+              </li>
+              <li>
+                <span style="color: var(--text-muted);">Duração:</span>
+                <span class="val">50 minutos</span>
+              </li>
+              <li>
+                <span style="color: var(--text-muted);">Investimento:</span>
+                <span class="val" style="color: #2D2316; font-size: 1.05rem;">R$ 150,00</span>
+              </li>
+            </ul>
+
+            <div style="margin-top: 24px;">
+              <a href="https://wa.me/55997052670?text=Ol%C3%A1%2C%20Thayse!%20Encontrei%20seu%20perfil%20na%20plataforma%20PsiConecta%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento." target="_blank" rel="noopener noreferrer" class="btn-custom btn-whatsapp" style="width: 100%; box-sizing: border-box; text-align: center; padding: 12px 16px;">
+                Falar com Thayse no WhatsApp
+              </a>
+              <span style="display: block; text-align: center; font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+                Telefone: +55 (55) 99705-2670
+              </span>
+            </div>
+          </aside>
+
+          <!-- Corpo Principal do Perfil -->
+          <div class="profile-main-body">
+            <div style="margin-bottom: 28px;">
+              <span class="badge-featured" style="margin-bottom: 8px;">Profissional Verificado PsiConecta</span>
+              <h2 style="font-size: 1.85rem; margin: 4px 0 16px 0;">Apresentação Profissional</h2>
+              <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7;">
+                Olá! Meu nome é Thayse Bianchin Rambo. Meu trabalho como psicóloga clínica tem como propósito oferecer um espaço genuinamente acolhedor, empático e cientificamente fundamentado, no qual você possa compreender seus pensamentos, acolher suas emoções e construir estratégias sólidas para enfrentar desafios do cotidiano.
+              </p>
+              <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7;">
+                O processo psicoterápico online é realizado por plataformas seguras de videochamada, garantindo total privacidade e comodidade para que você participe das sessões de onde se sentir mais confortável.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Abordagem Teórica: Terapia Cognitivo-Comportamental (TCC)</h3>
+              <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+                A TCC é uma abordagem estruturada, colaborativa e amplamente recomendada por pesquisas internacionais. Seu objetivo primordial é identificar como nossas percepções e padrões de pensamento influenciam diretamente nossas reações emocionais e comportamentos, capacitando a pessoa a desenvolver flexibilidade cognitiva e autonomia prática.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 32px;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 14px;">Especialidades e Demandas de Atendimento</h3>
+              <div class="tag-cloud" style="gap: 10px;">
+                <span class="tag-item" style="padding: 6px 14px; font-size: 0.86rem;">Manejo da Ansiedade e Estresse</span>
+                <span class="tag-item" style="padding: 6px 14px; font-size: 0.86rem;">TDAH em Adultos e Estratégias de Foco</span>
+                <span class="tag-item" style="padding: 6px 14px; font-size: 0.86rem;">Depressão e Desânimo</span>
+                <span class="tag-item" style="padding: 6px 14px; font-size: 0.86rem;">Relacionamentos e Habilidades Sociais</span>
+                <span class="tag-item" style="padding: 6px 14px; font-size: 0.86rem;">Autoestima e Autocobrança Excessiva</span>
+                <span class="tag-item" style="padding: 6px 14px; font-size: 0.86rem;">Regulação Emocional</span>
+              </div>
+            </div>
+
+            <div style="background: var(--color-beige-soft); border: 1px solid var(--border); border-radius: 16px; padding: 22px;">
+              <h4 style="margin: 0 0 8px 0; color: var(--color-brown-dark); font-size: 1.05rem;">Como agendar a primeira sessão?</h4>
+              <p style="margin: 0 0 16px 0; font-size: 0.9rem; color: var(--text-muted);">
+                Basta clicar no botão abaixo para abrir uma conversa no WhatsApp com uma mensagem pré-formatada. Você poderá combinar horários disponíveis, esclarecer dúvidas e conhecer o formato da sessão.
+              </p>
+              <a href="https://wa.me/55997052670?text=Ol%C3%A1%2C%20Thayse!%20Encontrei%20seu%20perfil%20na%20plataforma%20PsiConecta%20e%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento." target="_blank" rel="noopener noreferrer" class="btn-custom btn-whatsapp">
+                Iniciar contato com Thayse via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 4: PARA PSICÓLOGOS ==================== -->
+    <section id="view-para-psicologos" class="view-container">
+      <div class="section-wrap">
+        <div class="section-header-center">
+          <h2>Prática clínica ética e sustentável</h2>
+          <p>A PsiConecta foi concebida para valorizar a psicologia clínica, sem leilão de preços e sem intermediações que desrespeitam o trabalho dos profissionais.</p>
+        </div>
+
+        <!-- Proposta de Valor -->
+        <div class="pillars-grid" style="margin-bottom: 50px;">
+          <div class="pillar-card">
+            <div class="pillar-icon">⚖️</div>
+            <h3>Sem Competição Predatória</h3>
+            <p>Você define o seu valor de sessão de forma autônoma. Não incentivamos guerras de preços ou desvalorização do honorário justo.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">📱</div>
+            <h3>Contato Direto no WhatsApp</h3>
+            <p>O paciente entra em contato diretamente no seu número profissional cadastrado, garantindo agilidade no acolhimento e liberdade de agenda.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🛡️</div>
+            <h3>Sem Retenção de Prontuário</h3>
+            <p>A plataforma atua exclusivamente como ponte tecnológica. Registros clínicos e dados de sessões pertencem integralmente ao profissional e ao paciente.</p>
+          </div>
+        </div>
+
+        <!-- Planos de Parceria -->
+        <div class="section-header-center" style="margin-top: 60px;">
+          <h2>Planos transparentes para cada momento da sua carreira</h2>
+          <p>Escolha o modelo que melhor se alinha com seu momento clínico.</p>
+        </div>
+
+        <div class="plans-grid">
+          <!-- Plano Gratuito -->
+          <div class="plan-card">
+            <div>
+              <div class="plan-header">
+                <span class="badge-crp">Adesão Inicial</span>
+                <h3 style="font-size: 1.35rem; margin: 10px 0 0 0;">Plano Gratuito</h3>
+              </div>
+              <div class="plan-price-large">R$ 0 <span>/mês</span></div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                Ideal para psicólogos recém-formados ou em transição para o ambiente online.
+              </p>
+              <ul class="plan-benefits">
+                <li><span class="check-icon">✓</span> Presença no diretório de psicólogos</li>
+                <li><span class="check-icon">✓</span> Selo de CRP verificado</li>
+                <li><span class="check-icon">✓</span> Botão direto para WhatsApp do profissional</li>
+                <li><span class="check-icon">✓</span> Link de perfil compartilhável</li>
+              </ul>
+            </div>
+            <a href="#cadastro" class="btn-custom btn-secondary-soft" style="width: 100%; box-sizing: border-box; text-align: center;">
+              Começar no Plano Gratuito
+            </a>
+          </div>
+
+          <!-- Plano Destaque -->
+          <div class="plan-card plan-featured">
+            <div>
+              <div class="plan-header">
+                <span class="badge-featured">★ Mais Escolhido</span>
+                <h3 style="font-size: 1.35rem; margin: 10px 0 0 0;">Plano Destaque</h3>
+              </div>
+              <div class="plan-price-large">R$ 49 <span>/mês</span></div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                Visibilidade máxima com posicionamento prioritário e selo de evidência.
+              </p>
+              <ul class="plan-benefits">
+                <li><span class="check-icon">✓</span> <strong>Posicionamento prioritário</strong> no topo das buscas</li>
+                <li><span class="check-icon">✓</span> Selo visual exclusivo de evidência e destaque</li>
+                <li><span class="check-icon">✓</span> Exposição rotativa no card da página inicial</li>
+                <li><span class="check-icon">✓</span> Suporte humanizado para otimização de perfil</li>
+                <li><span class="check-icon">✓</span> Sem taxas sobre as sessões realizadas</li>
+              </ul>
+            </div>
+            <a href="#cadastro" class="btn-custom btn-primary-brown" style="width: 100%; box-sizing: border-box; text-align: center;">
+              Quero o Plano Destaque
+            </a>
+          </div>
+
+          <!-- Plano Comissão -->
+          <div class="plan-card">
+            <div>
+              <div class="plan-header">
+                <span class="badge-crp">Por Desempenho</span>
+                <h3 style="font-size: 1.35rem; margin: 10px 0 0 0;">Plano Comissão</h3>
+              </div>
+              <div class="plan-price-large">Comissão <span>restrita</span></div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                Incidência apenas sobre atendimentos originados a partir da plataforma.
+              </p>
+              <ul class="plan-benefits">
+                <li><span class="check-icon">✓</span> Zero mensalidade fixa</li>
+                <li><span class="check-icon">✓</span> Pagamento apenas quando houver paciente convertido</li>
+                <li><span class="check-icon">✓</span> Relatório transparente de cliques de contato</li>
+                <li><span class="check-icon">✓</span> Liberdade para migrar de plano quando preferir</li>
+              </ul>
+            </div>
+            <a href="#cadastro" class="btn-custom btn-secondary-soft" style="width: 100%; box-sizing: border-box; text-align: center;">
+              Solicitar Adesão por Parceria
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 Etapas de Adesão -->
+        <div style="background: #FFFFFF; border: 1px solid var(--border); border-radius: 20px; padding: 36px; margin: 60px 0;">
+          <h3 style="font-size: 1.4rem; text-align: center; margin-bottom: 30px;">Como funciona o processo de credenciamento em 3 etapas</h3>
+          <div class="steps-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="step-box">
+              <div class="step-number">1</div>
+              <h4>Envio dos Dados e CRP</h4>
+              <p>Preencha o formulário externo indicando número do CRP, abordagem, biografia e link do WhatsApp.</p>
+            </div>
+            <div class="step-box">
+              <div class="step-number">2</div>
+              <h4>Validação Documental</h4>
+              <p>Nossa equipe confere o status ativo da inscrição junto ao Conselho Regional de Psicologia correspondente.</p>
+            </div>
+            <div class="step-box">
+              <div class="step-number">3</div>
+              <h4>Publicação do Perfil</h4>
+              <p>Com a aprovação, seu card é ativado no diretório e você já fica disponível para novos contatos.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Psicólogos -->
+        <div class="section-header-center" style="margin-top: 50px;">
+          <h3>Dúvidas frequentes de psicólogos</h3>
+        </div>
+        <div class="accordion-group">
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Como recebo o pagamento das consultas?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              O pagamento é combinado e recebido diretamente por você via Pix, transferência ou meios de sua preferência. A PsiConecta não retém valores das consultas e não intervém nas suas transações financeiras com os pacientes.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>É obrigatório ter cadastro no e-Psi do CFP?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Sim. Conforme a Resolução CFP nº 11/2018, para prestar serviços psicológicos por meio de tecnologias da informação e da comunicação (TICs), o profissional deve estar regularmente cadastrado e autorizado na plataforma e-Psi do Conselho Federal de Psicologia.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Posso alterar minhas especialidades e horários quando quiser?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Sim. A qualquer momento você pode solicitar atualizações na sua biografia, valor de sessão e dados de contato através do suporte da plataforma.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 5: PARA PACIENTES ==================== -->
+    <section id="view-para-pacientes" class="view-container">
+      <div class="section-wrap">
+        <div class="section-header-center">
+          <h2>Guia do Paciente</h2>
+          <p>Tudo o que você precisa saber para iniciar sua psicoterapia com tranquilidade, acolhimento e segurança ética.</p>
+        </div>
+
+        <!-- Aviso em Destaque CVV -->
+        <div class="crisis-callout-card">
+          <div class="crisis-callout-icon">!</div>
+          <div class="crisis-callout-body">
+            <h4>Atenção: A PsiConecta não é serviço de atendimento de urgência ou emergência</h4>
+            <p>
+              Se você ou alguém próximo estiver passando por momentos de grave sofrimento psíquico, ideação suicida ou crise emergencial, ligue imediatamente para o <strong>CVV (Centro de Valorização da Vida) no telefone 188</strong> (ligação gratuita 24h em todo o Brasil) ou procure o CAPS / Pronto-Socorro mais próximo.
+            </p>
+          </div>
+        </div>
+
+        <!-- Conteúdo do Guia -->
+        <div class="pillars-grid" style="margin-bottom: 40px;">
+          <div class="pillar-card">
+            <div class="pillar-icon">🎯</div>
+            <h3>Como escolher o profissional?</h3>
+            <p>Leia com calma as abordagens teóricas e as especialidades de cada terapeuta. Escolha alguém com quem você sinta afinidade inicial com base nas questões que deseja trabalhar (ex: ansiedade, luto ou autoconhecimento).</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🌱</div>
+            <h3>O que esperar da 1ª sessão?</h3>
+            <p>A primeira sessão é um momento de conhecimento mútuo. Você compartilhará os motivos que o trouxeram até a terapia e o psicólogo explicará o enquadre: periodicidade, duração e combinação de horários.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🔐</div>
+            <h3>O que é o sigilo ético?</h3>
+            <p>Tudo o que é dito durante os atendimentos é estritamente confidencial, protegido pelo Artigo 9º do Código de Ética Profissional do Psicólogo. Suas informações não são compartilhadas com ninguém.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Pacientes -->
+        <div class="section-header-center" style="margin-top: 50px;">
+          <h3>Perguntas Frequentes de Pacientes</h3>
+        </div>
+        <div class="accordion-group">
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>A terapia online tem a mesma eficácia da presencial?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Sim. Dezenas de estudos científicos internacionais e nacionais demonstram que a psicoterapia online apresenta níveis de eficácia equivalentes aos do formato presencial para a maioria das demandas emocionais, oferecendo ainda mais conforto e flexibilidade.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Como é feito o pagamento da sessão?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              O pagamento é acordado diretamente entre você e o psicólogo selecionado via WhatsApp, antes ou logo após a sessão, normalmente através de Pix ou transferência bancária.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>O que preciso para fazer minha sessão online?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Basta ter um celular ou computador com conexão estável à internet, fones de ouvido para garantir sua privacidade e um local silencioso onde você possa falar com liberdade e conforto.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 6: SOBRE NÓS ==================== -->
+    <section id="view-sobre" class="view-container">
+      <div class="section-wrap">
+        <div class="legal-content-card">
+          <span class="badge-featured" style="margin-bottom: 12px;">Nossa História e Valores</span>
+          <h2>Sobre a PsiConecta</h2>
+          <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+            A <strong>PsiConecta</strong> nasceu do desejo de aproximar pessoas em busca de equilíbrio emocional a psicólogos comprometidos com o rigor científico e o calor humano. Entendemos a terapia como um direito fundamental de cuidado e autoconhecimento.
+          </p>
+
+          <div style="background: var(--color-beige-soft); border-left: 4px solid var(--color-brown-dark); padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 30px;">
+            <h4 style="margin: 0 0 6px 0; color: var(--color-brown-dark);">Espaço Institucional da Fundadora</h4>
+            <p style="margin: 0; font-size: 0.92rem; color: var(--text-muted);">
+              [Espaço reservado para o relato da fundadora: trajetória profissional, motivação para a criação da plataforma e visão de impacto social na saúde mental contemporânea.]
+            </p>
+          </div>
+
+          <h3>Nossos Três Pilares</h3>
+          <div style="display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 18px;">
+            <div style="background: #FAF8F4; border: 1px solid var(--border); padding: 16px 20px; border-radius: 12px;">
+              <strong style="color: var(--color-brown-dark); font-size: 1.05rem;">1. Acesso Democrático e Sem Fricção</strong>
+              <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--text-muted);">
+                Eliminamos barreiras burocráticas para que o primeiro contato entre paciente e psicólogo aconteça de maneira fluida, respeitosa e natural.
+              </p>
+            </div>
+            <div style="background: #FAF8F4; border: 1px solid var(--border); padding: 16px 20px; border-radius: 12px;">
+              <strong style="color: var(--color-brown-dark); font-size: 1.05rem;">2. Qualidade e Verificação Ativa</strong>
+              <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--text-muted);">
+                Apenas profissionais devidamente habilitados, com inscrição ativa no Conselho Regional de Psicologia, integram nosso ecossistema.
+              </p>
+            </div>
+            <div style="background: #FAF8F4; border: 1px solid var(--border); padding: 16px 20px; border-radius: 12px;">
+              <strong style="color: var(--color-brown-dark); font-size: 1.05rem;">3. Valorização da Categoria</strong>
+              <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--text-muted);">
+                Dizemos não às taxas predatórias que asfixiam os terapeutas. Defendemos a autonomia clínica e a dignidade na remuneração dos profissionais da saúde mental.
+              </p>
+            </div>
+          </div>
+
+          <h3>Carta de Compromissos Éticos com a Psicologia</h3>
+          <p style="font-size: 0.94rem; color: var(--text-muted); line-height: 1.6;">
+            A PsiConecta opera estritamente como agente facilitador de tecnologia de contato e divulgação profissional, respeitando na íntegra a Resolução CFP nº 11/2018 e as normativas do Código de Ética Profissional do Psicólogo. Não monitoramos conteúdos das sessões, não realizamos intermediação diagnóstica e não substituímos o julgamento técnico soberano do psicólogo assistente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 7: CENTRAL DE DÚVIDAS (FAQ) ==================== -->
+    <section id="view-faq" class="view-container">
+      <div class="section-wrap">
+        <div class="section-header-center">
+          <h2>Central de Dúvidas (FAQ)</h2>
+          <p>Encontre respostas claras para as dúvidas mais comuns de pacientes e psicólogos parceiros.</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 28px;">
+          <div style="display: inline-flex; background: var(--color-beige-soft); padding: 4px; border-radius: 999px; border: 1px solid var(--border);">
+            <button id="faqTabPacientes" class="filter-btn active" style="border: none;" onclick="app.switchFaqTab('pacientes')">Dúvidas de Pacientes</button>
+            <button id="faqTabPsicologos" class="filter-btn" style="border: none;" onclick="app.switchFaqTab('psicologos')">Dúvidas de Psicólogos</button>
+          </div>
+        </div>
+
+        <!-- Bloco de FAQ: Pacientes -->
+        <div id="faqGroupPacientes" class="accordion-group">
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Como entro em contato com o psicólogo escolhido?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Basta clicar no botão "WhatsApp" presente no card ou no perfil do profissional. O aplicativo abrirá diretamente uma conversa no número dele com uma mensagem introdutória para você agendar sua primeira conversa.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>A plataforma cobra alguma taxa do paciente?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Não! O uso da PsiConecta é 100% gratuito para pacientes. Você paga apenas o valor da sessão acordado diretamente com o psicólogo.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>O que acontece se eu precisar desmarcar ou remarcar?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Cada profissional possui sua própria política de reagendamento e aviso prévio (geralmente com 24h de antecedência). Essas combinações são alinhadas diretamente entre você e seu terapeuta.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>A PsiConecta atende planos de saúde?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Os psicólogos atendem majoritariamente de forma particular, mas muitos emitem recibo para que você possa solicitar reembolso junto ao seu convênio médico. Consulte o profissional no momento do contato.
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloco de FAQ: Psicólogos -->
+        <div id="faqGroupPsicologos" class="accordion-group" style="display: none;">
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Quem pode se cadastrar como psicólogo na PsiConecta?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Qualquer psicólogo com diploma de graduação reconhecido pelo MEC, registro ativo no Conselho Regional de Psicologia (CRP) e cadastro aprovado no sistema e-Psi do CFP.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Como é calculado o valor dos planos?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Oferecemos o Plano Gratuito (R$ 0/mês), o Plano Destaque (R$ 49/mês para maior evidência) e o modelo de Parceria por comissão restrita a contatos convertidos. Não há multas de fidelidade e você pode cancelar quando desejar.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>A PsiConecta armazena prontuários ou grava sessões?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              Não. A PsiConecta atua estritamente como intermediadora de contato inicial. Toda a guarda de prontuários, termos de consentimento e sigilo clínico segue sob responsabilidade técnica direta do psicólogo credenciado, conforme a legislação sanitária e do CFP.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 8: POLÍTICA DE PRIVACIDADE ==================== -->
+    <section id="view-politica" class="view-container">
+      <div class="section-wrap">
+        <div class="legal-content-card">
+          <span class="badge-crp" style="margin-bottom: 12px;">Conformidade LGPD (Lei nº 13.709/2018)</span>
+          <h2>Política de Privacidade</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Última atualização: <span class="placeholder-token">[DATA]</span> • Versão 1.0
+          </p>
+
+          <p style="font-size: 0.94rem; color: var(--text-muted); line-height: 1.6;">
+            A <strong>PsiConecta</strong> preza pela proteção integral de dados e pela privacidade dos usuários que utilizam nossa plataforma digital para localizar profissionais de saúde mental. Esta política descreve as bases do tratamento de dados conforme a Lei Geral de Proteção de Dados Pessoais (LGPD).
+          </p>
+
+          <h3>1. Natureza da Plataforma e Tratamento de Dados</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+            A PsiConecta opera como <strong>intermediadora tecnológica de divulgação e contato</strong>. Não coletamos, não processamos e não armazenamos dados clínicos, prontuários, notas de sessão ou diagnósticos de pacientes. O contato terapêutico se desenvolve de forma descentralizada e privada via aplicativo de mensagens (WhatsApp) e videochamada, sob sigilo profissional assegurado pelo Código de Ética do Psicólogo.
+          </p>
+
+          <h3>2. Dados Coletados</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+            - <strong>De Psicólogos:</strong> Nome civil e profissional, número de inscrição no CRP, abordagem teórica, especialidades, telefone de contato público profissional e foto/avatar.<br>
+            - <strong>De Pacientes / Navegantes:</strong> Não exigimos criação de conta para busca. Podemos coletar dados analíticos anônimos de navegação (como cliques e páginas visitadas) para melhorias técnicas.
+          </p>
+
+          <h3>3. Direitos dos Titulares de Dados</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+            Em conformidade com o Artigo 18 da LGPD, o titular dos dados tem o direito de solicitar a confirmação da existência de tratamento, a retificação de dados incompletos ou a exclusão imediata de seu perfil público profissional.
+          </p>
+
+          <h3>4. Canal de Contato do Encarregado (DPO)</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+            Para quaisquer solicitações, esclarecimentos ou exercício de direitos referentes aos seus dados pessoais, entre em contato através do e-mail institucional: <span class="placeholder-token">[E-MAIL DE CONTATO]</span>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VIEW 9: TERMOS DE USO ==================== -->
+    <section id="view-termos" class="view-container">
+      <div class="section-wrap">
+        <div class="legal-content-card">
+          <span class="badge-crp" style="margin-bottom: 12px;">Regulação e Escopo Operacional</span>
+          <h2>Termos de Uso da Plataforma</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Vigência a partir de: <span class="placeholder-token">[DATA]</span>
+          </p>
+
+          <h3>1. Escopo do Serviço</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+            A PsiConecta é uma plataforma estritamente intermediária de aproximação digital entre indivíduos que buscam atendimento psicoterápico e psicólogos devidamente habilitados com inscrição ativa junto ao respectivo Conselho Regional de Psicologia (CRP). A plataforma não realiza atendimento clínico direto, não fornece diagnósticos nem atua como empregadora dos profissionais cadastrados.
+          </p>
+
+          <h3>2. Exclusão de Serviços de Emergência</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+            <strong>A PsiConecta não presta serviços de socorro médico ou apoio a crises emergenciais.</strong> Casos de risco imediato à vida ou episódios agudos devem ser direcionados ao serviço do CVV (Ligue 188) ou aos serviços públicos de pronto atendimento (SAMU 192 / CAPS).
+          </p>
+
+          <h3>3. Responsabilidades do Profissional</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+            O psicólogo credenciado é inteiramente responsável por manter regular sua inscrição no CRP e seu registro e-Psi no Conselho Federal de Psicologia, assim como pela gestão de sua agenda, honorários, sigilo das sessões e emissão de recibos fiscais cabíveis.
+          </p>
+
+          <h3>4. Responsabilidades do Usuário / Paciente</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+            O paciente compromete-se a fornecer informações verídicas durante o contato inicial e zelar por um ambiente privado e com sinal de internet adequado durante a realização das sessões remotas.
+          </p>
+
+          <h3>5. Dúvidas Jurídicas e Suporte</h3>
+          <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+            Para informações sobre estes termos, entre em contato via <span class="placeholder-token">[E-MAIL DE CONTATO]</span>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ETAPA 1: LOGIN DO PSICÓLOGO ==================== -->
+    <section id="view-login" class="view-container">
+      <div class="section-wrap">
+        <div class="section-header-center">
+          <span class="badge-crp" style="margin-bottom: 10px;">Área do Psicólogo</span>
+          <h2>Acesso Profissional</h2>
+          <p>Entre com suas credenciais para gerenciar seu perfil clínico e visualizar sua vitrine.</p>
+        </div>
+
+        <div class="form-card">
+          <!-- Aviso honesto e discreto de validação / banco de dados -->
+          <div class="notice-box info" style="margin-bottom: 22px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <div>
+              <strong>Plataforma em fase de validação</strong>
+              <div style="font-size: 0.82rem; margin-top: 3px;">
+                O acesso completo e a autenticação segura serão liberados em breve com a ativação do banco de dados (Supabase). No momento, os dados são gerenciados localmente no navegador para navegação e teste do fluxo.
+              </div>
+            </div>
+          </div>
+
+          <div id="loginAlertBox" style="display: none;" class="notice-box warning"></div>
+
+          <form id="loginForm" novalidate>
+            <div class="form-group">
+              <label for="loginEmail">E-mail Profissional <span class="required">*</span></label>
+              <input type="email" id="loginEmail" class="form-control" placeholder="seu.email@exemplo.com" required autocomplete="email">
+              <span class="form-error-msg" id="loginEmailErr">Por favor, insira um e-mail válido.</span>
+            </div>
+
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <label for="loginPassword" style="margin-bottom: 0;">Senha <span class="required">*</span></label>
+                <a href="#" id="forgotPasswordLink" style="font-size: 0.8rem; color: var(--color-brown-mid); text-decoration: underline;">Esqueci minha senha</a>
+              </div>
+              <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+              <span class="form-error-msg" id="loginPassErr">A senha deve conter ao menos 6 caracteres.</span>
+            </div>
+
+            <button type="submit" class="btn-custom btn-primary-brown" style="width: 100%; padding: 12px; margin-top: 8px;">
+              Entrar
+            </button>
+          </form>
+
+          <div style="margin-top: 24px; text-align: center; font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+            Ainda não sou cadastrado → 
+            <a href="#cadastro" style="font-weight: 700; color: var(--color-brown-dark); text-decoration: underline; margin-left: 4px;">
+              Criar conta
+            </a>
+          </div>
+
+          <div style="margin-top: 18px; text-align: center; font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 6px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Ambiente ético com proteção de dados conforme a LGPD.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ETAPA 2: CADASTRO ("CRIAR CONTA") ==================== -->
+    <section id="view-cadastro" class="view-container">
+      <div class="section-wrap">
+        <div class="section-header-center">
+          <span class="badge-crp" style="margin-bottom: 10px;">Etapa 1 de 4 • Cadastro</span>
+          <h2>Criar Conta de Psicólogo</h2>
+          <p>Informe seus dados básicos e registro profissional para iniciar sua presença na PsiConecta.</p>
+        </div>
+
+        <div class="form-card">
+          <!-- Aviso honesto e transparente -->
+          <div class="notice-box info" style="margin-bottom: 22px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div>
+              <strong>Aviso sobre armazenamento:</strong>
+              <div style="font-size: 0.82rem; margin-top: 2px;">
+                Os dados desta demonstração são salvos localmente no seu navegador (localStorage). A integração com banco de dados oficial (Supabase) será feita na próxima fase.
+              </div>
+            </div>
+          </div>
+
+          <div id="cadastroAlertBox" style="display: none;" class="notice-box warning"></div>
+
+          <form id="cadastroForm" novalidate>
+            <div class="form-group">
+              <label for="cadNome">Nome Completo <span class="required">*</span></label>
+              <input type="text" id="cadNome" class="form-control" placeholder="Ex: Dra. Mariana Silva" required>
+              <span class="form-error-msg" id="cadNomeErr">Por favor, informe seu nome completo.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="cadEmail">E-mail <span class="required">*</span></label>
+              <input type="email" id="cadEmail" class="form-control" placeholder="seuemail@exemplo.com" required autocomplete="email">
+              <span class="form-error-msg" id="cadEmailErr">Informe um e-mail válido.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="cadCrp">CRP (Conselho Regional de Psicologia) <span class="required">*</span></label>
+              <input type="text" id="cadCrp" class="form-control" placeholder="Ex: 07/32555" required maxlength="12">
+              <span class="form-hint">Formato recomendado: UF/Número (ex: 07/32555 ou 06/12345)</span>
+              <span class="form-error-msg" id="cadCrpErr">Informe um CRP válido (ex: 07/32555).</span>
+            </div>
+
+            <div class="form-group">
+              <label for="cadSenha">Senha <span class="required">*</span></label>
+              <input type="password" id="cadSenha" class="form-control" placeholder="Mínimo 6 caracteres" required autocomplete="new-password">
+              <span class="form-error-msg" id="cadSenhaErr">A senha deve ter no mínimo 6 caracteres.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="cadConfSenha">Confirmação de Senha <span class="required">*</span></label>
+              <input type="password" id="cadConfSenha" class="form-control" placeholder="Repita a senha criada" required autocomplete="new-password">
+              <span class="form-error-msg" id="cadConfSenhaErr">As senhas não coincidem.</span>
+            </div>
+
+            <button type="submit" class="btn-custom btn-primary-brown" style="width: 100%; padding: 13px; font-size: 0.95rem; margin-top: 10px;">
+              Criar conta e escolher plano →
+            </button>
+          </form>
+
+          <div style="margin-top: 22px; text-align: center; font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 18px;">
+            Já tem uma conta? <a href="#login" style="font-weight: 700; color: var(--color-brown-dark); text-decoration: underline;">Fazer login</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ETAPA 3: ESCOLHA DE PLANO ==================== -->
+    <section id="view-planos" class="view-container">
+      <div class="section-wrap">
+        <div class="section-header-center">
+          <span class="badge-featured" style="margin-bottom: 10px;">Etapa 2 de 4 • Escolha de Plano</span>
+          <h2>Escolha o plano ideal para você</h2>
+          <p>Flexibilidade e transparência absoluta para divulgar sua clínica com dignidade.</p>
+        </div>
+
+        <!-- Aviso honesto e transparente -->
+        <div class="notice-box info" style="max-width: 860px; margin: 0 auto 30px auto;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <div>
+            <strong>Transparência de integração:</strong> Os dados de assinatura desta etapa são registrados localmente no navegador (localStorage). Na próxima fase, a cobrança e autenticação serão conectadas diretamente ao banco de dados Supabase e à API do Mercado Pago.
+          </div>
+        </div>
+
+        <div class="plans-grid">
+          <!-- Plano Gratuito -->
+          <div class="plan-card">
+            <div>
+              <div class="plan-header">
+                <span class="badge-crp">Adesão Inicial</span>
+                <h3 style="font-size: 1.35rem; margin: 10px 0 0 0;">Plano Gratuito</h3>
+              </div>
+              <div class="plan-price-large">R$ 0 <span>/mês</span></div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                Comece a receber contatos no diretório sem qualquer custo fixo ou mensalidade.
+              </p>
+              <ul class="plan-benefits">
+                <li><span class="check-icon">✓</span> Presença no diretório de psicólogos</li>
+                <li><span class="check-icon">✓</span> Selo de CRP verificado</li>
+                <li><span class="check-icon">✓</span> Botão direto para seu WhatsApp</li>
+                <li><span class="check-icon">✓</span> Link de perfil compartilhável</li>
+              </ul>
+            </div>
+            <button type="button" class="btn-custom btn-secondary-soft" onclick="app.selecionarPlano('Gratuito', 0)" style="width: 100%; box-sizing: border-box; text-align: center;">
+              Começar grátis
+            </button>
+          </div>
+
+          <!-- Plano Destaque (Mercado Pago) -->
+          <div class="plan-card plan-featured">
+            <div>
+              <div class="plan-header">
+                <span class="badge-featured">★ Mais Escolhido</span>
+                <h3 style="font-size: 1.35rem; margin: 10px 0 0 0;">Plano Destaque</h3>
+              </div>
+              <div class="plan-price-large">R$ 49 <span>/mês</span></div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
+                Posicionamento prioritário no topo das buscas e selo de evidência exclusivo.
+              </p>
+              
+              <ul class="plan-benefits">
+                <li><span class="check-icon">✓</span> <strong>Posicionamento prioritário</strong> no topo das buscas</li>
+                <li><span class="check-icon">✓</span> <strong>Selo de evidência</strong> e destaque visual</li>
+                <li><span class="check-icon">✓</span> Exposição rotativa na página inicial</li>
+                <li><span class="check-icon">✓</span> Sem comissões sobre as sessões realizadas</li>
+              </ul>
+            </div>
+            <div>
+              <div style="background: #FFF8E6; border: 1px dashed #D6B762; border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; font-size: 0.78rem; color: #5C4F3A;">
+                <strong>Link de pagamento recorrente (Mercado Pago):</strong><br>
+                <code style="word-break: break-all; font-weight: 700; color: #7A6A4F;">[COLE_AQUI_O_LINK_RECORRENTE_DO_MERCADO_PAGO]</code>
+              </div>
+              <button type="button" class="btn-custom btn-primary-brown" onclick="app.selecionarPlano('Destaque', 49)" style="width: 100%; box-sizing: border-box; text-align: center;">
+                Assinar Plano Destaque
+              </button>
+            </div>
+          </div>
+
+          <!-- Plano Comissão -->
+          <div class="plan-card">
+            <div>
+              <div class="plan-header">
+                <span class="badge-crp">Por Desempenho</span>
+                <h3 style="font-size: 1.35rem; margin: 10px 0 0 0;">Plano Comissão</h3>
+              </div>
+              <div class="plan-price-large">Comissão <span>restrita</span></div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+                Incidência apenas sobre atendimentos originados a partir da plataforma.
+              </p>
+              <ul class="plan-benefits">
+                <li><span class="check-icon">✓</span> Sem mensalidade fixa</li>
+                <li><span class="check-icon">✓</span> Pague apenas se houver atendimento confirmado</li>
+                <li><span class="check-icon">✓</span> Acompanhamento transparente de contatos</li>
+                <li><span class="check-icon">✓</span> Liberdade total para mudar de plano</li>
+              </ul>
+            </div>
+            <button type="button" class="btn-custom btn-secondary-soft" onclick="app.selecionarPlano('Comissao', 'sob-demanda')" style="width: 100%; box-sizing: border-box; text-align: center;">
+              Começar com Comissão
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ETAPA 4: CONFIGURAÇÃO DO PERFIL ==================== -->
+    <section id="view-perfil-config" class="view-container">
+      <div class="section-wrap">
+        <div class="section-header-center">
+          <span class="badge-featured" style="margin-bottom: 10px;">Etapa 3 de 4 • Perfil Profissional</span>
+          <h2>Configuração do seu Perfil</h2>
+          <p>Preencha os dados que serão exibidos na sua vitrine para que pacientes conheçam seu trabalho.</p>
+        </div>
+
+        <div class="form-card form-card-wide">
+          <!-- Aviso honesto e transparente -->
+          <div class="notice-box info" style="margin-bottom: 22px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <div>
+              <strong>Aviso de armazenamento local:</strong> Os dados deste perfil serão salvos no armazenamento local do navegador (localStorage) para fins de validação da interface. A persistência em nuvem via Supabase será implementada na fase seguinte.
+            </div>
+          </div>
+
+          <form id="perfilConfigForm" novalidate>
+            <!-- Foto de perfil com preview circular -->
+            <div class="form-group">
+              <label>Foto de Perfil Profissional</label>
+              <div class="photo-upload-wrap">
+                <div class="photo-preview-avatar" id="configFotoPreview" style="width: 88px; height: 88px; border-radius: 50%; box-shadow: 0 2px 8px rgba(92,79,58,0.15);">
+                  <span id="configFotoMonogram">Ψ</span>
+                </div>
+                <div>
+                  <input type="file" id="configFotoInput" accept="image/png, image/jpeg, image/webp" class="custom-file-input">
+                  <span class="form-hint">Faça upload de uma foto com boa iluminação. O preview é exibido em círculo (máx. 2MB).</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Apresentação / Biografia -->
+            <div class="form-group">
+              <label for="configBio">Texto de Apresentação / Biografia <span class="required">*</span></label>
+              <textarea id="configBio" class="form-control" rows="5" placeholder="Olá! Sou psicólogo(a) clínico(a)... Conte sobre sua trajetória, seu acolhimento e como acontecem suas sessões..." required></textarea>
+              <span class="form-hint">Mínimo de 30 caracteres para uma apresentação acolhedora.</span>
+              <span class="form-error-msg" id="configBioErr">Escreva uma apresentação com pelo menos 30 caracteres.</span>
+            </div>
+
+            <!-- Especialidades (Seleção Múltipla com Chips) -->
+            <div class="form-group">
+              <label>Especialidades / Demandas Atendidas <span class="required">*</span></label>
+              <span class="form-hint" style="margin-bottom: 8px;">Selecione uma ou mais especialidades em que você atua:</span>
+              <div class="checkbox-group-grid" id="configEspecialidadesChips">
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="Ansiedade" checked>
+                  <span>Ansiedade</span>
+                </label>
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="Depressão" checked>
+                  <span>Depressão</span>
+                </label>
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="Luto">
+                  <span>Luto</span>
+                </label>
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="Casais">
+                  <span>Casais</span>
+                </label>
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="TDAH">
+                  <span>TDAH</span>
+                </label>
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="Relacionamentos">
+                  <span>Relacionamentos</span>
+                </label>
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="Autoestima">
+                  <span>Autoestima</span>
+                </label>
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="Burnout">
+                  <span>Burnout</span>
+                </label>
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="Fobias">
+                  <span>Fobias</span>
+                </label>
+                <label class="checkbox-chip">
+                  <input type="checkbox" name="perfilEsp" value="Outras">
+                  <span>Outras</span>
+                </label>
+              </div>
+              <span class="form-error-msg" id="configEspErr">Selecione pelo menos uma especialidade.</span>
+            </div>
+
+            <!-- Abordagem teórica e Valor da Sessão -->
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="configAbordagem">Abordagem Teórica <span class="required">*</span></label>
+                <select id="configAbordagem" class="form-control" required>
+                  <option value="">Selecione sua abordagem...</option>
+                  <option value="TCC">TCC (Terapia Cognitivo-Comportamental)</option>
+                  <option value="Psicanálise">Psicanálise</option>
+                  <option value="Humanista">Humanista</option>
+                  <option value="Sistêmica">Sistêmica</option>
+                  <option value="Comportamental">Comportamental</option>
+                  <option value="Outras">Outras</option>
+                </select>
+                <span class="form-error-msg" id="configAbordagemErr">Selecione sua abordagem teórica.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="configValor">Valor da Sessão (R$) <span class="required">*</span></label>
+                <input type="number" id="configValor" class="form-control" placeholder="Ex: 150" min="40" max="1000" step="5" required>
+                <span class="form-hint">Você possui autonomia para definir e combinar valores com o paciente.</span>
+                <span class="form-error-msg" id="configValorErr">Informe um valor numérico válido (ex: 150).</span>
+              </div>
+            </div>
+
+            <!-- Link do WhatsApp -->
+            <div class="form-group">
+              <label for="configWhatsapp">Link ou Telefone do WhatsApp <span class="required">*</span></label>
+              <input type="text" id="configWhatsapp" class="form-control" placeholder="Ex: (51) 99999-8888 ou https://wa.me/5551999998888" required>
+              <span class="form-hint">Os pacientes entrarão em contato direto com você através deste link/número.</span>
+              <span class="form-error-msg" id="configWhatsappErr">Informe seu número ou link do WhatsApp.</span>
+            </div>
+
+            <button type="submit" class="btn-custom btn-primary-brown" style="width: 100%; padding: 14px; font-size: 1rem; margin-top: 12px;">
+              Salvar perfil e ir para o Painel →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ETAPA 5: PAINEL DO PSICÓLOGO ==================== -->
+    <section id="view-painel" class="view-container">
+      <div class="section-wrap">
+        <!-- Banner de Boas-Vindas e Status "Perfil Ativo" -->
+        <div class="dashboard-header">
+          <div style="display: flex; align-items: center; gap: 18px;">
+            <div class="photo-preview-avatar" id="dashHeaderAvatar" style="width: 72px; height: 72px; font-size: 1.6rem; border-radius: 50%;">
+              <span id="dashMonogram">Ψ</span>
+            </div>
+            <div>
+              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <h2 style="font-size: 1.6rem; margin: 0;" id="dashWelcomeName">Dr(a). Psicólogo(a)</h2>
+                <span class="badge-crp" id="dashStatusBadge">✓ Perfil Ativo</span>
+                <span class="badge-featured" id="dashPlanBadge">Plano Gratuito</span>
+              </div>
+              <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: var(--text-muted);" id="dashCrpText">
+                CRP ativo e verificado
+              </p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="#perfil-config" class="btn-custom btn-secondary-soft" style="font-size: 0.84rem;">
+              ✏️ Editar perfil
+            </a>
+            <a href="#psicologos" class="btn-custom btn-primary-brown" style="font-size: 0.84rem;">
+              👁️ Ver minha vitrine
+            </a>
+            <button type="button" class="btn-custom btn-secondary-soft" id="btnDashLogout" style="font-size: 0.84rem; color: #B93822; border-color: #EAC9C4;">
+              Sair
+            </button>
+          </div>
+        </div>
+
+        <!-- Aviso transparente sobre fase do projeto -->
+        <div class="notice-box info">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <div>
+            <strong>Aviso transparente sobre persistência:</strong> Você está visualizando o perfil ativo armazenado localmente neste navegador (localStorage). A infraestrutura oficial com banco de dados Supabase e sincronização em tempo real será integrada na próxima fase de desenvolvimento.
+          </div>
+        </div>
+
+        <!-- Resumo dos Dados Cadastrados (Card da Vitrine) -->
+        <div style="display: grid; grid-template-columns: 1fr 340px; gap: 24px; margin-top: 24px;" class="profile-full-layout">
+          <!-- Coluna Principal com Resumo -->
+          <div class="psi-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+              <h3 style="margin: 0; font-size: 1.25rem;">Resumo do Perfil Cadastrado</h3>
+              <span class="badge-featured" id="dashPlanLabel">Plano Ativo</span>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <h4 style="font-size: 0.95rem; color: var(--color-brown-mid); text-transform: uppercase; letter-spacing: 0.03em; margin: 0 0 6px 0;">
+                Apresentação Profissional / Biografia
+              </h4>
+              <p id="dashResumoBio" style="font-size: 0.95rem; color: var(--text); line-height: 1.6; margin: 0; background: #FAF8F4; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--border);">
+                Nenhuma biografia informada ainda.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <h4 style="font-size: 0.95rem; color: var(--color-brown-mid); text-transform: uppercase; letter-spacing: 0.03em; margin: 0 0 8px 0;">
+                Especialidades Atendidas
+              </h4>
+              <div class="tag-cloud" id="dashResumoEspecialidades">
+                <!-- Preenchido via JS -->
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+              <div style="background: #FAF8F4; padding: 14px; border-radius: 12px; border: 1px solid var(--border);">
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Abordagem Teórica</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: var(--color-brown-dark); margin-top: 2px;" id="dashResumoAbordagem">
+                  TCC
+                </div>
+              </div>
+              <div style="background: #FAF8F4; padding: 14px; border-radius: 12px; border: 1px solid var(--border);">
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Valor da Sessão</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: var(--color-brown-dark); margin-top: 2px;" id="dashResumoValor">
+                  R$ 150,00
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna Lateral: Dados de Contato e Ações -->
+          <div class="psi-card" style="height: fit-content;">
+            <h3 style="margin-top: 0; font-size: 1.15rem; margin-bottom: 14px;">Canal de Contato</h3>
+            
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 0.8rem; color: var(--text-muted);">E-mail Cadastrado</div>
+              <div style="font-weight: 600; font-size: 0.92rem; word-break: break-all;" id="dashResumoEmail">-</div>
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Registro Profissional</div>
+              <div style="font-weight: 700; font-size: 0.95rem; color: var(--color-brown-dark);" id="dashResumoCrp">-</div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <div style="font-size: 0.8rem; color: var(--text-muted);">WhatsApp de Atendimento</div>
+              <div style="font-weight: 600; font-size: 0.92rem;" id="dashResumoWhatsapp">-</div>
+            </div>
+
+            <a href="#" id="dashWhatsappTestLink" target="_blank" rel="noopener noreferrer" class="btn-custom btn-whatsapp" style="width: 100%; box-sizing: border-box; text-align: center; margin-bottom: 10px;">
+              Testar botão WhatsApp
+            </a>
+
+            <a href="#perfil-config" class="btn-custom btn-secondary-soft" style="width: 100%; box-sizing: border-box; text-align: center;">
+              Editar informações
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé Institucional Completo -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Coluna 1: Marca e Missão -->
+        <div class="footer-col">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+            <div class="brand-mark" style="width: 32px; height: 32px; font-size: 1rem;">Ψ</div>
+            <strong style="font-family: var(--font-serif); font-size: 1.25rem; color: #FAF4E9;">PsiConecta</strong>
+          </div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: #D2C4AE; margin-bottom: 16px;">
+            Conectando você ao cuidado profissional que acolhe, com segurança ética, respeito à autonomia e proximidade humana.
+          </p>
+          <div style="font-size: 0.78rem; color: #BFB09A;">
+            CNPJ: <span class="placeholder-token">[CNPJ]</span><br>
+            Responsabilidade Técnica: <span class="placeholder-token">[Responsável Técnica: Nome + CRP]</span>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <div class="footer-col">
+          <h5>Navegação</h5>
+          <ul class="footer-nav-list">
+            <li><a href="#home">Página Inicial</a></li>
+            <li><a href="#psicologos">Buscar Psicólogos</a></li>
+            <li><a href="#para-pacientes">Guia do Paciente</a></li>
+            <li><a href="#para-psicologos">Para Profissionais</a></li>
+            <li><a href="#planos">Planos para Psicólogos</a></li>
+            <li><a href="#login">Área do Psicólogo (Login)</a></li>
+            <li><a href="#sobre">Sobre a PsiConecta</a></li>
+            <li><a href="#faq">Dúvidas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Institucional e Ética -->
+        <div class="footer-col">
+          <h5>Ética & Transparência</h5>
+          <ul class="footer-nav-list">
+            <li><a href="#politica">Política de Privacidade (LGPD)</a></li>
+            <li><a href="#termos">Termos de Uso</a></li>
+            <li><a href="https://cadastro.cfp.org.br/" target="_blank" rel="noopener noreferrer">Consulta Cadastro Nacional CFP ↗</a></li>
+            <li><a href="https://e-psi.cfp.org.br/" target="_blank" rel="noopener noreferrer">Plataforma e-Psi CFP ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Alerta de Crise CVV -->
+        <div class="footer-col">
+          <h5>Apoio Imediato</h5>
+          <div class="footer-emergency-badge">
+            <strong>Precisa de escuta urgente?</strong>
+            Ligue para o <strong>CVV (188)</strong>. O atendimento é gratuito, sigiloso e disponível 24 horas todos os dias por telefone e chat online no site oficial cvv.org.br.
+            <div style="margin-top: 8px; font-size: 0.74rem; color: #F0DD9E;">
+              * Esta plataforma não presta serviços de emergência psiquiátrica.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          © <span id="currentYear"></span> PsiConecta. Todos os direitos reservados.
+        </div>
+        <div style="display: flex; gap: 16px;">
+          <a href="#politica" style="color: #D2C4AE; text-decoration: none;">Privacidade</a>
+          <a href="#termos" style="color: #D2C4AE; text-decoration: none;">Termos de Uso</a>
+          <a href="#faq" style="color: #D2C4AE; text-decoration: none;">Ajuda</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

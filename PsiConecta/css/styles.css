@@ -1362,3 +1362,40 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   flex: 1 1 340px;            /* cada card cresce, mas nunca fica fino demais */
   max-width: 440px;           /* nem largo demais */
 }
+/* ===== Setas de navegação do card em destaque ===== */
+.featured-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.featured-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #FFFFFF;
+  color: var(--color-brown-dark);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.featured-arrow:hover {
+  background: var(--color-brown-dark);
+  color: #FFFFFF;
+  border-color: var(--color-brown-dark);
+}
+
+.featured-counter {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}

@@ -32,7 +32,6 @@
         <a href="#para-psicologos" class="nav-link" data-route="para-psicologos">Para Psicólogos</a>
         <a href="#sobre" class="nav-link" data-route="sobre">Sobre Nós</a>
         <a href="#faq" class="nav-link" data-route="faq">Dúvidas (FAQ)</a>
-        <a href="#login" class="nav-link" data-route="login" id="navPsicologoLink" style="color: var(--color-brown-dark); font-weight: 700;">Área do Psicólogo</a>
         <a href="#psicologos" class="btn-custom btn-primary-brown" style="font-size: 0.84rem; padding: 7px 16px; margin-left: 8px;">Encontrar Psicólogo</a>
       </nav>
     </div>
@@ -73,7 +72,10 @@
     <span class="badge-crp">Ativo CRP 07/32555</span>
   </div>
   <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 16px;">
-    <div class="avatar-monogram thayse">TB</div>
+    <div class="profile-avatar-wrap featured-photo-wrap">
+      <div class="avatar-monogram thayse" hidden>TB</div>
+      <img src="assets/fotos/sorrindo.jpeg" alt="Foto de Thayse Bianchin Rambo" class="profile-photo" onerror="this.hidden = true; this.previousElementSibling.hidden = false;">
+    </div>
     <div>
       <h3 style="margin: 0; font-size: 1.25rem;">Thayse Bianchin Rambo</h3>
       <p style="margin: 2px 0 0 0; font-size: 0.85rem; color: var(--color-brown-mid); font-weight: 600;">CRP 07/32555 • TCC</p>
@@ -229,8 +231,7 @@
     <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 260px; margin: 0 0 18px; line-height: 1.5;">
       É psicólogo(a)? Cadastre-se na PsiConecta, crie seu perfil e receba novos pacientes.
     </p>
-    <a href="https://forms.gle/COLE-SEU-LINK-AQUI" target="_blank" rel="noopener noreferrer" class="btn-custom btn-secondary-soft">Quero me cadastrar</a>
-    <span style="font-size: 0.75rem; color: #8A7A64; margin-top: 12px;">Cadastro rápido • 2 minutos</span>
+    <button type="button" class="btn-custom btn-secondary-soft" disabled>Cadastro temporariamente indisponível</button>
   </article>
   <!-- Card 2: Thayse Bianchin Rambo (Perfil Principal) -->
 <article class="psychologist-card is-featured" data-specialties="Ansiedade,TDAH,Depressão,Relacionamentos" data-name="Thayse Bianchin Rambo" data-approach="TCC Terapia Cognitivo-Comportamental">
@@ -240,8 +241,8 @@
       <span class="badge-crp" style="white-space: nowrap; width: fit-content; text-align: center; padding: 6px 12px;">Ativo CRP 07/32555</span>
     </div>
     <div class="profile-card-header">
-      <div class="avatar-monogram thayse" style="display: none;">TB</div>
-      <img src="assets/fotos/sorrindo.jpg" alt="Foto de Thayse Bianchin Rambo" class="profile-photo" onerror="this.remove(); this.previousElementSibling.style.display = 'flex';">
+      <div class="avatar-monogram thayse" hidden>TB</div>
+      <img src="assets/fotos/sorrindo.jpeg" alt="Foto de Thayse Bianchin Rambo" class="profile-photo" onerror="this.hidden = true; this.previousElementSibling.hidden = false;">
       <div>
         <h3 class="profile-card-name">Thayse Bianchin Rambo</h3>
         <div class="profile-card-approach">Terapia Cognitivo-Comportamental (TCC)</div>
@@ -276,8 +277,7 @@
       <span class="badge-crp" style="white-space: nowrap; width: fit-content; text-align: center; padding: 6px 12px;">Ativo CRP 00/00000</span>
     </div>
     <div class="profile-card-header">
-      <div class="avatar-monogram mauricio" style="display: none;">MA</div>
-      <img src="assets/fotos/mauricio.jpg" alt="Foto de Maurício" class="profile-photo" onerror="this.remove(); this.previousElementSibling.style.display = 'flex';">
+      <div class="photo-placeholder" role="img" aria-label="Espaço reservado para foto de Maurício"></div>
       <div>
         <h3 class="profile-card-name">Maurício</h3>
         <div class="profile-card-approach">Terapia Cognitivo-Comportamental (TCC)</div>
@@ -321,7 +321,10 @@
           <!-- Coluna Lateral (Resumo & CTA) -->
           <aside class="profile-sidebar">
             <div style="text-align: center; margin-bottom: 20px;">
-              <div class="avatar-monogram thayse" style="width: 88px; height: 88px; font-size: 2rem; margin: 0 auto 16px auto;">TB</div>
+              <div class="profile-avatar-wrap profile-avatar-large">
+                <div class="avatar-monogram thayse" hidden>TB</div>
+                <img src="assets/fotos/sorrindo.jpeg" alt="Foto de Thayse Bianchin Rambo" class="profile-photo" onerror="this.hidden = true; this.previousElementSibling.hidden = false;">
+              </div>
               <h2 style="font-size: 1.4rem; margin: 0 0 4px 0;">Thayse Bianchin Rambo</h2>
               <div style="font-size: 0.88rem; color: var(--color-brown-mid); font-weight: 700; margin-bottom: 8px;">
                 CRP 07/32555 • RS
@@ -405,8 +408,7 @@
   <div class="container" style="max-width: 760px; margin: 0 auto; padding: 40px 20px;">
     <a href="#psicologos" class="btn-custom btn-secondary-soft" style="margin-bottom: 20px;">← Voltar para Psicólogos</a>
     <div class="profile-card-header" style="margin-bottom: 20px;">
-      <div class="avatar-monogram mauricio" style="display: none;">MA</div>
-      <img src="assets/fotos/mauricio.jpg" alt="Foto de Maurício" class="profile-photo" onerror="this.remove(); this.previousElementSibling.style.display = 'flex';">
+      <div class="photo-placeholder" role="img" aria-label="Espaço reservado para foto de Maurício"></div>
       <div>
         <h1 class="profile-card-name" style="font-size: 1.6rem;">Maurício</h1>
         <div class="profile-card-approach">Terapia Cognitivo-Comportamental (TCC)</div>
@@ -485,9 +487,9 @@
         <li><span class="check-icon">✓</span> Link de perfil compartilhável</li>
       </ul>
     </div>
-    <a href="#cadastro" class="btn-custom btn-secondary-soft" style="width: 100%; box-sizing: border-box; text-align: center;">
-      Começar no Plano Gratuito
-    </a>
+    <button type="button" class="btn-custom btn-secondary-soft" style="width: 100%; box-sizing: border-box; text-align: center;" disabled>
+      Cadastro temporariamente indisponível
+    </button>
   </div>
   <!-- Plano Destaque -->
   <div class="plan-card plan-featured">
@@ -508,9 +510,9 @@
         <li><span class="check-icon">✓</span> Sem taxas sobre as sessões realizadas</li>
       </ul>
     </div>
-    <a href="#cadastro" class="btn-custom btn-primary-brown" style="width: 100%; box-sizing: border-box; text-align: center;">
-      Quero o Plano Destaque
-    </a>
+    <button type="button" class="btn-custom btn-primary-brown" style="width: 100%; box-sizing: border-box; text-align: center;" disabled>
+      Cadastro temporariamente indisponível
+    </button>
   </div>
 </div>  <!-- ← FECHA o grid dos planos AQUI -->
 <!-- 3 Etapas de Adesão (agora fora do grid, em largura total) -->
@@ -830,431 +832,6 @@
         </div>
       </div>
     </section>
-    <!-- ==================== ETAPA 1: LOGIN DO PSICÓLOGO ==================== -->
-    <section id="view-login" class="view-container">
-      <div class="section-wrap">
-        <div class="section-header-center">
-          <span class="badge-crp" style="margin-bottom: 10px;">Área do Psicólogo</span>
-          <h2>Acesso Profissional</h2>
-          <p>Entre com suas credenciais para gerenciar seu perfil clínico e visualizar sua vitrine.</p>
-        </div>
-        <div class="form-card">
-          <!-- Aviso honesto e discreto de validação / banco de dados -->
-          <div class="notice-box info" style="margin-bottom: 22px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-            <div>
-              <strong>Plataforma em fase de validação</strong>
-              <div style="font-size: 0.82rem; margin-top: 3px;">
-                O acesso completo e a autenticação segura serão liberados em breve com a ativação do banco de dados (Supabase). No momento, os dados são gerenciados localmente no navegador para navegação e teste do fluxo.
-              </div>
-            </div>
-          </div>
-          <div id="loginAlertBox" style="display: none;" class="notice-box warning"></div>
-          <form id="loginForm" novalidate>
-            <div class="form-group">
-              <label for="loginEmail">E-mail Profissional <span class="required">*</span></label>
-              <input type="email" id="loginEmail" class="form-control" placeholder="seu.email@exemplo.com" required autocomplete="email">
-              <span class="form-error-msg" id="loginEmailErr">Por favor, insira um e-mail válido.</span>
-            </div>
-            <div class="form-group">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <label for="loginPassword" style="margin-bottom: 0;">Senha <span class="required">*</span></label>
-                <a href="#" id="forgotPasswordLink" style="font-size: 0.8rem; color: var(--color-brown-mid); text-decoration: underline;">Esqueci minha senha</a>
-              </div>
-              <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required autocomplete="current-password">
-              <span class="form-error-msg" id="loginPassErr">A senha deve conter ao menos 6 caracteres.</span>
-            </div>
-            <button type="submit" class="btn-custom btn-primary-brown" style="width: 100%; padding: 12px; margin-top: 8px;">
-              Entrar
-            </button>
-          </form>
-          <div style="margin-top: 24px; text-align: center; font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
-            Ainda não sou cadastrado → 
-            <a href="#cadastro" style="font-weight: 700; color: var(--color-brown-dark); text-decoration: underline; margin-left: 4px;">
-              Criar conta
-            </a>
-          </div>
-          <div style="margin-top: 18px; text-align: center; font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 6px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Ambiente ético com proteção de dados conforme a LGPD.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ==================== ETAPA 2: CADASTRO ("CRIAR CONTA") ==================== -->
-    <section id="view-cadastro" class="view-container">
-      <div class="section-wrap">
-        <div class="section-header-center">
-          <span class="badge-crp" style="margin-bottom: 10px;">Etapa 1 de 4 • Cadastro</span>
-          <h2>Criar Conta de Psicólogo</h2>
-          <p>Informe seus dados básicos e registro profissional para iniciar sua presença na PsiConecta.</p>
-        </div>
-        <div class="form-card">
-          <!-- Aviso honesto e transparente -->
-          <div class="notice-box info" style="margin-bottom: 22px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <div>
-              <strong>Aviso sobre armazenamento:</strong>
-              <div style="font-size: 0.82rem; margin-top: 2px;">
-                Os dados desta demonstração são salvos localmente no seu navegador (localStorage). A integração com banco de dados oficial (Supabase) será feita na próxima fase.
-              </div>
-            </div>
-          </div>
-          <div id="cadastroAlertBox" style="display: none;" class="notice-box warning"></div>
-          <form id="cadastroForm" novalidate>
-            <div class="form-group">
-              <label for="cadNome">Nome Completo <span class="required">*</span></label>
-              <input type="text" id="cadNome" class="form-control" placeholder="Ex: Dra. Mariana Silva" required>
-              <span class="form-error-msg" id="cadNomeErr">Por favor, informe seu nome completo.</span>
-            </div>
-            <div class="form-group">
-              <label for="cadEmail">E-mail <span class="required">*</span></label>
-              <input type="email" id="cadEmail" class="form-control" placeholder="seuemail@exemplo.com" required autocomplete="email">
-              <span class="form-error-msg" id="cadEmailErr">Informe um e-mail válido.</span>
-            </div>
-            <div class="form-group">
-              <label for="cadCrp">CRP (Conselho Regional de Psicologia) <span class="required">*</span></label>
-              <input type="text" id="cadCrp" class="form-control" placeholder="Ex: 07/32555" required maxlength="12">
-              <span class="form-hint">Formato recomendado: UF/Número (ex: 07/32555 ou 06/12345)</span>
-              <span class="form-error-msg" id="cadCrpErr">Informe um CRP válido (ex: 07/32555).</span>
-            </div>
-            <div class="form-group">
-              <label for="cadSenha">Senha <span class="required">*</span></label>
-              <input type="password" id="cadSenha" class="form-control" placeholder="Mínimo 6 caracteres" required autocomplete="new-password">
-              <span class="form-error-msg" id="cadSenhaErr">A senha deve ter no mínimo 6 caracteres.</span>
-            </div>
-            <div class="form-group">
-              <label for="cadConfSenha">Confirmação de Senha <span class="required">*</span></label>
-              <input type="password" id="cadConfSenha" class="form-control" placeholder="Repita a senha criada" required autocomplete="new-password">
-              <span class="form-error-msg" id="cadConfSenhaErr">As senhas não coincidem.</span>
-            </div>
-            <button type="submit" class="btn-custom btn-primary-brown" style="width: 100%; padding: 13px; font-size: 0.95rem; margin-top: 10px;">
-              Criar conta e escolher plano →
-            </button>
-          </form>
-          <div style="margin-top: 22px; text-align: center; font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 18px;">
-            Já tem uma conta? <a href="#login" style="font-weight: 700; color: var(--color-brown-dark); text-decoration: underline;">Fazer login</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ==================== ETAPA 3: ESCOLHA DE PLANO ==================== -->
-    <section id="view-planos" class="view-container">
-      <div class="section-wrap">
-        <div class="section-header-center">
-          <span class="badge-featured" style="margin-bottom: 10px;">Etapa 2 de 4 • Escolha de Plano</span>
-          <h2>Escolha o plano ideal para você</h2>
-          <p>Flexibilidade e transparência absoluta para divulgar sua clínica com dignidade.</p>
-        </div>
-        <!-- Aviso honesto e transparente -->
-        <div class="notice-box info" style="max-width: 860px; margin: 0 auto 30px auto;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-          <div>
-            <strong>Transparência de integração:</strong> Os dados de assinatura desta etapa são registrados localmente no navegador (localStorage). Na próxima fase, a cobrança e autenticação serão conectadas diretamente ao banco de dados Supabase e à API do Mercado Pago.
-          </div>
-        </div>
-        <div class="plans-grid">
-          <!-- Plano Gratuito -->
-          <div class="plan-card">
-            <div>
-              <div class="plan-header">
-                <span class="badge-crp">Adesão Inicial</span>
-                <h3 style="font-size: 1.35rem; margin: 10px 0 0 0;">Plano Gratuito</h3>
-              </div>
-              <div class="plan-price-large">R$ 0 <span>/mês</span></div>
-              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
-                Comece a receber contatos no diretório sem qualquer custo fixo ou mensalidade.
-              </p>
-              <ul class="plan-benefits">
-                <li><span class="check-icon">✓</span> Presença no diretório de psicólogos</li>
-                <li><span class="check-icon">✓</span> Selo de CRP verificado</li>
-                <li><span class="check-icon">✓</span> Botão direto para seu WhatsApp</li>
-                <li><span class="check-icon">✓</span> Link de perfil compartilhável</li>
-              </ul>
-            </div>
-            <button type="button" class="btn-custom btn-secondary-soft" onclick="app.selecionarPlano('Gratuito', 0)" style="width: 100%; box-sizing: border-box; text-align: center;">
-              Começar grátis
-            </button>
-          </div>
-          <!-- Plano Destaque (Mercado Pago) -->
-          <div class="plan-card plan-featured">
-            <div>
-              <div class="plan-header">
-                <span class="badge-featured">★ Mais Escolhido</span>
-                <h3 style="font-size: 1.35rem; margin: 10px 0 0 0;">Plano Destaque</h3>
-              </div>
-              <div class="plan-price-large">R$ 49 <span>/mês</span></div>
-              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
-                Posicionamento prioritário no topo das buscas e selo de evidência exclusivo.
-              </p>
-              
-              <ul class="plan-benefits">
-                <li><span class="check-icon">✓</span> <strong>Posicionamento prioritário</strong> no topo das buscas</li>
-                <li><span class="check-icon">✓</span> <strong>Selo de evidência</strong> e destaque visual</li>
-                <li><span class="check-icon">✓</span> Exposição rotativa na página inicial</li>
-                <li><span class="check-icon">✓</span> Sem comissões sobre as sessões realizadas</li>
-              </ul>
-            </div>
-            <div>
-              <div style="background: #FFF8E6; border: 1px dashed #D6B762; border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; font-size: 0.78rem; color: #5C4F3A;">
-                <strong>Link de pagamento recorrente (Mercado Pago):</strong><br>
-                <code style="word-break: break-all; font-weight: 700; color: #7A6A4F;">[COLE_AQUI_O_LINK_RECORRENTE_DO_MERCADO_PAGO]</code>
-              </div>
-              <button type="button" class="btn-custom btn-primary-brown" onclick="app.selecionarPlano('Destaque', 49)" style="width: 100%; box-sizing: border-box; text-align: center;">
-                Assinar Plano Destaque
-              </button>
-            </div>
-          </div>
-          <!-- Plano Comissão -->
-          <div class="plan-card">
-            <div>
-              <div class="plan-header">
-                <span class="badge-crp">Por Desempenho</span>
-                <h3 style="font-size: 1.35rem; margin: 10px 0 0 0;">Plano Comissão</h3>
-              </div>
-              <div class="plan-price-large">Comissão <span>restrita</span></div>
-              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
-                Incidência apenas sobre atendimentos originados a partir da plataforma.
-              </p>
-              <ul class="plan-benefits">
-                <li><span class="check-icon">✓</span> Sem mensalidade fixa</li>
-                <li><span class="check-icon">✓</span> Pague apenas se houver atendimento confirmado</li>
-                <li><span class="check-icon">✓</span> Acompanhamento transparente de contatos</li>
-                <li><span class="check-icon">✓</span> Liberdade total para mudar de plano</li>
-              </ul>
-            </div>
-            <button type="button" class="btn-custom btn-secondary-soft" onclick="app.selecionarPlano('Comissao', 'sob-demanda')" style="width: 100%; box-sizing: border-box; text-align: center;">
-              Começar com Comissão
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ==================== ETAPA 4: CONFIGURAÇÃO DO PERFIL ==================== -->
-    <section id="view-perfil-config" class="view-container">
-      <div class="section-wrap">
-        <div class="section-header-center">
-          <span class="badge-featured" style="margin-bottom: 10px;">Etapa 3 de 4 • Perfil Profissional</span>
-          <h2>Configuração do seu Perfil</h2>
-          <p>Preencha os dados que serão exibidos na sua vitrine para que pacientes conheçam seu trabalho.</p>
-        </div>
-        <div class="form-card form-card-wide">
-          <!-- Aviso honesto e transparente -->
-          <div class="notice-box info" style="margin-bottom: 22px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-            <div>
-              <strong>Aviso de armazenamento local:</strong> Os dados deste perfil serão salvos no armazenamento local do navegador (localStorage) para fins de validação da interface. A persistência em nuvem via Supabase será implementada na fase seguinte.
-            </div>
-          </div>
-          <form id="perfilConfigForm" novalidate>
-            <!-- Foto de perfil com preview circular -->
-            <div class="form-group">
-              <label>Foto de Perfil Profissional</label>
-              <div class="photo-upload-wrap">
-                <div class="photo-preview-avatar" id="configFotoPreview" style="width: 88px; height: 88px; border-radius: 50%; box-shadow: 0 2px 8px rgba(92,79,58,0.15);">
-                  <span id="configFotoMonogram">Ψ</span>
-                </div>
-                <div>
-                  <input type="file" id="configFotoInput" accept="image/png, image/jpeg, image/webp" class="custom-file-input">
-                  <span class="form-hint">Faça upload de uma foto com boa iluminação. O preview é exibido em círculo (máx. 2MB).</span>
-                </div>
-              </div>
-            </div>
-            <!-- Apresentação / Biografia -->
-            <div class="form-group">
-              <label for="configBio">Texto de Apresentação / Biografia <span class="required">*</span></label>
-              <textarea id="configBio" class="form-control" rows="5" placeholder="Olá! Sou psicólogo(a) clínico(a)... Conte sobre sua trajetória, seu acolhimento e como acontecem suas sessões..." required></textarea>
-              <span class="form-hint">Mínimo de 30 caracteres para uma apresentação acolhedora.</span>
-              <span class="form-error-msg" id="configBioErr">Escreva uma apresentação com pelo menos 30 caracteres.</span>
-            </div>
-            <!-- Especialidades (Seleção Múltipla com Chips) -->
-            <div class="form-group">
-              <label>Especialidades / Demandas Atendidas <span class="required">*</span></label>
-              <span class="form-hint" style="margin-bottom: 8px;">Selecione uma ou mais especialidades em que você atua:</span>
-              <div class="checkbox-group-grid" id="configEspecialidadesChips">
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="Ansiedade" checked>
-                  <span>Ansiedade</span>
-                </label>
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="Depressão" checked>
-                  <span>Depressão</span>
-                </label>
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="Luto">
-                  <span>Luto</span>
-                </label>
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="Casais">
-                  <span>Casais</span>
-                </label>
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="TDAH">
-                  <span>TDAH</span>
-                </label>
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="Relacionamentos">
-                  <span>Relacionamentos</span>
-                </label>
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="Autoestima">
-                  <span>Autoestima</span>
-                </label>
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="Burnout">
-                  <span>Burnout</span>
-                </label>
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="Fobias">
-                  <span>Fobias</span>
-                </label>
-                <label class="checkbox-chip">
-                  <input type="checkbox" name="perfilEsp" value="Outras">
-                  <span>Outras</span>
-                </label>
-              </div>
-              <span class="form-error-msg" id="configEspErr">Selecione pelo menos uma especialidade.</span>
-            </div>
-            <!-- Abordagem teórica e Valor da Sessão -->
-            <div class="form-row-2">
-              <div class="form-group">
-                <label for="configAbordagem">Abordagem Teórica <span class="required">*</span></label>
-                <select id="configAbordagem" class="form-control" required>
-                  <option value="">Selecione sua abordagem...</option>
-                  <option value="TCC">TCC (Terapia Cognitivo-Comportamental)</option>
-                  <option value="Psicanálise">Psicanálise</option>
-                  <option value="Humanista">Humanista</option>
-                  <option value="Sistêmica">Sistêmica</option>
-                  <option value="Comportamental">Comportamental</option>
-                  <option value="Outras">Outras</option>
-                </select>
-                <span class="form-error-msg" id="configAbordagemErr">Selecione sua abordagem teórica.</span>
-              </div>
-              <div class="form-group">
-                <label for="configValor">Valor da Sessão (R$) <span class="required">*</span></label>
-                <input type="number" id="configValor" class="form-control" placeholder="Ex: 150" min="40" max="1000" step="5" required>
-                <span class="form-hint">Você possui autonomia para definir e combinar valores com o paciente.</span>
-                <span class="form-error-msg" id="configValorErr">Informe um valor numérico válido (ex: 150).</span>
-              </div>
-            </div>
-            <!-- Link do WhatsApp -->
-            <div class="form-group">
-              <label for="configWhatsapp">Link ou Telefone do WhatsApp <span class="required">*</span></label>
-              <input type="text" id="configWhatsapp" class="form-control" placeholder="Ex: (51) 99999-8888 ou https://wa.me/5551999998888" required>
-              <span class="form-hint">Os pacientes entrarão em contato direto com você através deste link/número.</span>
-              <span class="form-error-msg" id="configWhatsappErr">Informe seu número ou link do WhatsApp.</span>
-            </div>
-            <button type="submit" class="btn-custom btn-primary-brown" style="width: 100%; padding: 14px; font-size: 1rem; margin-top: 12px;">
-              Salvar perfil e ir para o Painel →
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-    <!-- ==================== ETAPA 5: PAINEL DO PSICÓLOGO ==================== -->
-    <section id="view-painel" class="view-container">
-      <div class="section-wrap">
-        <!-- Banner de Boas-Vindas e Status "Perfil Ativo" -->
-        <div class="dashboard-header">
-          <div style="display: flex; align-items: center; gap: 18px;">
-            <div class="photo-preview-avatar" id="dashHeaderAvatar" style="width: 72px; height: 72px; font-size: 1.6rem; border-radius: 50%;">
-              <span id="dashMonogram">Ψ</span>
-            </div>
-            <div>
-              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                <h2 style="font-size: 1.6rem; margin: 0;" id="dashWelcomeName">Dr(a). Psicólogo(a)</h2>
-                <span class="badge-crp" id="dashStatusBadge">✓ Perfil Ativo</span>
-                <span class="badge-featured" id="dashPlanBadge">Plano Gratuito</span>
-              </div>
-              <p style="margin: 4px 0 0 0; font-size: 0.88rem; color: var(--text-muted);" id="dashCrpText">
-                CRP ativo e verificado
-              </p>
-            </div>
-          </div>
-          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <a href="#perfil-config" class="btn-custom btn-secondary-soft" style="font-size: 0.84rem;">
-              ✏️ Editar perfil
-            </a>
-            <a href="#psicologos" class="btn-custom btn-primary-brown" style="font-size: 0.84rem;">
-              👁️ Ver minha vitrine
-            </a>
-            <button type="button" class="btn-custom btn-secondary-soft" id="btnDashLogout" style="font-size: 0.84rem; color: #B93822; border-color: #EAC9C4;">
-              Sair
-            </button>
-          </div>
-        </div>
-        <!-- Aviso transparente sobre fase do projeto -->
-        <div class="notice-box info">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-          <div>
-            <strong>Aviso transparente sobre persistência:</strong> Você está visualizando o perfil ativo armazenado localmente neste navegador (localStorage). A infraestrutura oficial com banco de dados Supabase e sincronização em tempo real será integrada na próxima fase de desenvolvimento.
-          </div>
-        </div>
-        <!-- Resumo dos Dados Cadastrados (Card da Vitrine) -->
-        <div style="display: grid; grid-template-columns: 1fr 340px; gap: 24px; margin-top: 24px;" class="profile-full-layout">
-          <!-- Coluna Principal com Resumo -->
-          <div class="psi-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
-              <h3 style="margin: 0; font-size: 1.25rem;">Resumo do Perfil Cadastrado</h3>
-              <span class="badge-featured" id="dashPlanLabel">Plano Ativo</span>
-            </div>
-            <div style="margin-bottom: 20px;">
-              <h4 style="font-size: 0.95rem; color: var(--color-brown-mid); text-transform: uppercase; letter-spacing: 0.03em; margin: 0 0 6px 0;">
-                Apresentação Profissional / Biografia
-              </h4>
-              <p id="dashResumoBio" style="font-size: 0.95rem; color: var(--text); line-height: 1.6; margin: 0; background: #FAF8F4; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--border);">
-                Nenhuma biografia informada ainda.
-              </p>
-            </div>
-            <div style="margin-bottom: 20px;">
-              <h4 style="font-size: 0.95rem; color: var(--color-brown-mid); text-transform: uppercase; letter-spacing: 0.03em; margin: 0 0 8px 0;">
-                Especialidades Atendidas
-              </h4>
-              <div class="tag-cloud" id="dashResumoEspecialidades">
-                <!-- Preenchido via JS -->
-              </div>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
-              <div style="background: #FAF8F4; padding: 14px; border-radius: 12px; border: 1px solid var(--border);">
-                <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Abordagem Teórica</div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: var(--color-brown-dark); margin-top: 2px;" id="dashResumoAbordagem">
-                  TCC
-                </div>
-              </div>
-              <div style="background: #FAF8F4; padding: 14px; border-radius: 12px; border: 1px solid var(--border);">
-                <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Valor da Sessão</div>
-                <div style="font-size: 1.05rem; font-weight: 700; color: var(--color-brown-dark); margin-top: 2px;" id="dashResumoValor">
-                  R$ 150,00
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Coluna Lateral: Dados de Contato e Ações -->
-          <div class="psi-card" style="height: fit-content;">
-            <h3 style="margin-top: 0; font-size: 1.15rem; margin-bottom: 14px;">Canal de Contato</h3>
-            
-            <div style="margin-bottom: 16px;">
-              <div style="font-size: 0.8rem; color: var(--text-muted);">E-mail Cadastrado</div>
-              <div style="font-weight: 600; font-size: 0.92rem; word-break: break-all;" id="dashResumoEmail">-</div>
-            </div>
-            <div style="margin-bottom: 16px;">
-              <div style="font-size: 0.8rem; color: var(--text-muted);">Registro Profissional</div>
-              <div style="font-weight: 700; font-size: 0.95rem; color: var(--color-brown-dark);" id="dashResumoCrp">-</div>
-            </div>
-            <div style="margin-bottom: 20px;">
-              <div style="font-size: 0.8rem; color: var(--text-muted);">WhatsApp de Atendimento</div>
-              <div style="font-weight: 600; font-size: 0.92rem;" id="dashResumoWhatsapp">-</div>
-            </div>
-            <a href="#" id="dashWhatsappTestLink" target="_blank" rel="noopener noreferrer" class="btn-custom btn-whatsapp" style="width: 100%; box-sizing: border-box; text-align: center; margin-bottom: 10px;">
-              Testar botão WhatsApp
-            </a>
-            <a href="#perfil-config" class="btn-custom btn-secondary-soft" style="width: 100%; box-sizing: border-box; text-align: center;">
-              Editar informações
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
   <!-- Rodapé Institucional Completo -->
   <footer class="site-footer">
@@ -1282,8 +859,6 @@
             <li><a href="#psicologos">Buscar Psicólogos</a></li>
             <li><a href="#para-pacientes">Guia do Paciente</a></li>
             <li><a href="#para-psicologos">Para Profissionais</a></li>
-            <li><a href="#planos">Planos para Psicólogos</a></li>
-            <li><a href="#login">Área do Psicólogo (Login)</a></li>
             <li><a href="#sobre">Sobre a PsiConecta</a></li>
             <li><a href="#faq">Dúvidas Frequentes</a></li>
           </ul>

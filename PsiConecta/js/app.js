@@ -649,3 +649,73 @@
     document.addEventListener('DOMContentLoaded', () => {
       app.init();
     });
+/* ===== ROTATIVIDADE: Card em Destaque na Página Inicial ===== */
+
+// 1) A LISTA DOS PROFISSIONAIS QUE PAGARAM O DESTAQUE
+// >> Sempre que alguém assinar o plano pago, adicione um bloco novo aqui.
+const featuredProfiles = [
+  {
+    nome: "Thayse Bianchin Rambo",
+    foto: "assets/fotos/thayse-bianchin-rambo.jpg",
+    abordagem: "Terapia Cognitivo-Comportamental (TCC)",
+    crp: "CRP 07/32555",
+    descricao: "Prática clínica humanizada orientada a resultados e autonomia emocional. Atendimento individual para jovens e adultos.",
+    tags: ["Ansiedade", "TDAH", "Depressão", "Relacionamentos"],
+    preco: "R$ 150,00",
+    whatsapp: "55997052670",
+    linkPerfil: "#perfil-thayse"
+  }
+  // ,{  <-- para adicionar outro profissional, copie o bloco acima,
+  //    mude os dados e cole aqui com a vírgula na frente
+  // }
+];
+
+// 2) TEMPO DE ROTAÇÃO
+// >> 24 = troca 1x por dia | 6 = troca a cada 6 horas | 2 = a cada 2 horas
+const ROTATION_HOURS = 6;
+const periodMs = ROTATION_HOURS * 60 * 60 * 1000;
+
+// 3) FUNÇÃO QUE ESCOLHE O PERFIL DA VEZ
+function getFeaturedProfile() {
+  if (featuredProfiles.length === 0) return null;
+  const index = Math.floor(Date.now() / periodMs) % featuredProfiles.length;
+  return featuredProfiles[index];
+}
+
+// 4) MONTAR O CARD NA PÁGINA INICIAL
+function renderFeaturedCard() {
+  const profile = getFeaturedProfile();
+  if (!profile) return;
+
+  const card = document.getElementById("featuredPsychologistCard");
+  if (!card) return;
+
+  card.innerHTML = `
+    <span class="badge-featured">★ Destaque PsiConecta</span>
+    <div class="profile-card-header">
+      <img src="${profile.foto}" alt="Foto de ${profile.nome}" class="profile-photo">
+      <div>
+        <h3 class="profile-card-name">${profile.nome}</h3>
+        <div class="profile-card-approach">${profile.abordagem}</div>
+        <span style="font-size: 0.76rem; color: #695944;">${profile.crp} • Online • Todo o Brasil</span>
+      </div>
+    </div>
+    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+      ${profile.descricao}
+    </p>
+    <div class="tag-cloud">
+      ${profile.tags.map(tag => `<span class="tag-item">${tag}</span>`).join("")}
+    </div>
+    <div class="price-tag-row">
+      <span style="font-size: 0.82rem; color: var(--text-muted);">Investimento por sessão</span>
+      <span class="price-value">${profile.preco}</span>
+    </div>
+    <div class="card-actions-row">
+      <a href="${profile.linkPerfil}" class="btn-custom btn-secondary-soft">Ver perfil</a>
+      <a href="https://wa.me/${profile.whatsapp}?text=Olá! Encontrei seu perfil na PsiConecta e gostaria de agendar uma sessão." target="_blank" rel="noopener noreferrer" class="btn-custom btn-whatsapp">WhatsApp</a>
+    </div>
+  `;
+}
+
+// 5) RODA ASSIM QUE A PÁGINA CARREGA
+document.addEventListener("DOMContentLoaded", renderFeaturedCard);

@@ -1326,3 +1326,24 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   margin-top: -2px;
   text-align: left;
 }
+/* ===== Centralizar o texto dos itens do menu ===== */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;              /* distância entre os itens (ajuste se ficar largo demais) */
+}
+
+.main-nav .nav-link {
+  display: inline-flex;  /* vira uma "caixa" flexível */
+  align-items: center;   /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente */
+  text-align: center;
+  padding: 8px 12px;     /* respiro igual dos dois lados — texto sempre no meio */
+}
+
+.main-nav .btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — PsiConecta</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const supabaseClient = supabase.createClient(
+      "https://bnezrziflrpkdhvedpmi.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJuZXpyemlmbHJwa2RodmVkcG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA5NzMwNDMsImV4cCI6MjEwNjU0OTA0M30.ld3U117wOvuU-aOwBpBiOJs45zA6ljrdVJqnClJE7gY"
+    );
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #F7F3EC;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 20px;
+    }
+    .auth-card {
+      background: #fff; width: 100%; max-width: 420px;
+      border-radius: 14px; padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      border: 1px solid #E9E0D0;
+    }
+    .back-link { display: inline-block; font-size: .85rem; color: #8A6D4A; text-decoration: none; margin-bottom: 18px; }
+    .back-link:hover { text-decoration: underline; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #4A3B2A; }
+    .subtitle { color: #8A6D4A; margin: 4px 0 22px; font-size: .9rem; }
+    .tabs { display: flex; gap: 8px; margin-bottom: 22px; }
+    .tab {
+      flex: 1; padding: 10px; border: 1px solid #D6C7A9; background: #fff;
+      border-radius: 8px; font-family: inherit; font-size: .9rem; cursor: pointer; color: #4A3B2A;
+    }
+    .tab.active { background: #4A3B2A; color: #fff; border-color: #4A3B2A; }
+    .form label { display: block; font-size: .85rem; color: #4A3B2A; margin: 12px 0 4px; font-weight: bold; }
+    .form input {
+      width: 100%; padding: 11px; border: 1px solid #D6C7A9; border-radius: 8px;
+      font-size: 1rem; font-family: inherit;
+    }
+    .btn-submit {
+      width: 100%; margin-top: 20px; padding: 13px; background: #8A6D4A; color: #fff;
+      border: none; border-radius: 8px; font-size: 1rem; font-family: inherit; cursor: pointer;
+    }
+    .btn-submit:hover { background: #6F5437; }
+    #message { margin-top: 16px; font-size: .9rem; color: #B23B2E; text-align: center; min-height: 20px; }
+  </style>
+</head>
+<body>
+  <div class="auth-card">
+    <a href="index.html" class="back-link">← Voltar ao site</a>
+    <div class="logo">PsiConecta</div>
+    <p class="subtitle">Plataforma de Psicoterapia Online</p>
+
+    <div class="tabs">
+      <button id="tabLogin" class="tab active" onclick="showTab('login')">Entrar</button>
+      <button id="tabSignup" class="tab" onclick="showTab('signup')">Criar conta</button>
+    </div>
+
+    <form id="loginForm" class="form">
+      <label>E-mail</label>
+      <input type="email" id="loginEmail" required>
+      <label>Senha</label>
+      <input type="password" id="loginPassword" required>
+      <button type="submit" class="btn-submit">Entrar</button>
+    </form>
+
+    <form id="signupForm" class="form" style="display:none;">
+      <label>Seu nome</label>
+      <input type="text" id="signupName" required>
+      <label>E-mail</label>
+      <input type="email" id="signupEmail" required>
+      <label>Senha (mínimo 6 caracteres)</label>
+      <input type="password" id="signupPassword" required>
+      <button type="submit" class="btn-submit">Criar conta</button>
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function showTab(tab) {
+      document.getElementById("loginForm").style.display = tab === "login" ? "block" : "none";
+      document.getElementById("signupForm").style.display = tab === "signup" ? "block" : "none";
+      document.getElementById("tabLogin").classList.toggle("active", tab === "login");
+      document.getElementById("tabSignup").classList.toggle("active", tab === "signup");
+      document.getElementById("message").textContent = "";
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      const msg = document.getElementById("message");
+      msg.textContent = "Entrando...";
+      const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+      if (error) {
+        msg.textContent = "Erro: " + error.message;
+      } else {
+        msg.textContent = "Logado com sucesso! Redirecionando...";
+        window.location.href = "index.html";
+      }
+    });
+
+    document.getElementById("signupForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("signupName").value;
+      const email = document.getElementById("signupEmail").value;
+      const password = document.getElementById("signupPassword").value;
+      const msg = document.getElementById("message");
+      msg.textContent = "Criando conta...";
+      const { data, error } = await supabaseClient.auth.signUp({
+        email,
+        password,
+        options: { data: { nome: name } }
+      });
+      if (error) {
+        msg.textContent = "Erro: " + error.message;
+      } else {
+        if (data.session) {
+          msg.textContent = "Conta criada! Redirecionando...";
+          window.location.href = "index.html";
+        } else {
+          msg.textContent = "Conta criada! Verifique seu e-mail para confirmar.";
+        }
+      }
+    });
+  </script>
+</body>
+</html>

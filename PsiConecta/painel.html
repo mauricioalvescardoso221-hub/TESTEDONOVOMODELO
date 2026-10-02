@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Painel — PsiConecta</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const supabaseClient = supabase.createClient(
+      "https://bnezrziflrpkdhvedpmi.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJuZXpyemlmbHJwa2RodmVkcG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA5NzMwNDMsImV4cCI6MjEwNjU0OTA0M30.ld3U117wOvuU-aOwBpBiOJs45zA6ljrdVJqnClJE7gY"
+    );
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #F7F3EC; min-height: 100vh; padding: 20px;
+    }
+    .topbar {
+      max-width: 720px; margin: 0 auto 20px; display: flex;
+      justify-content: space-between; align-items: center;
+    }
+    .topbar .logo { font-size: 1.3rem; font-weight: bold; color: #4A3B2A; }
+    .topbar a { color: #8A6D4A; text-decoration: none; font-size: .9rem; }
+    .card {
+      max-width: 720px; margin: 0 auto; background: #fff; border-radius: 14px;
+      padding: 28px; border: 1px solid #E9E0D0; box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+    h1 { font-size: 1.4rem; color: #4A3B2A; margin-bottom: 4px; }
+    .sub { color: #8A6D4A; font-size: .9rem; margin-bottom: 20px; }
+    label { display: block; font-size: .85rem; color: #4A3B2A; margin: 14px 0 4px; font-weight: bold; }
+    input, textarea {
+      width: 100%; padding: 11px; border: 1px solid #D6C7A9; border-radius: 8px;
+      font-size: 1rem; font-family: inherit;
+    }
+    textarea { resize: vertical; min-height: 80px; }
+    .row { display: flex; gap: 12px; }
+    .row > div { flex: 1; }
+    .btn-save {
+      width: 100%; margin-top: 22px; padding: 13px; background: #8A6D4A; color: #fff;
+      border: none; border-radius: 8px; font-size: 1rem; font-family: inherit; cursor: pointer;
+    }
+    .btn-save:hover { background: #6F5437; }
+    .btn-logout {
+      background: none; border: 1px solid #D6C7A9; color: #8A6D4A; padding: 6px 14px;
+      border-radius: 8px; cursor: pointer; font-family: inherit; font-size: .85rem;
+    }
+    #status { margin-top: 14px; font-size: .9rem; text-align: center; min-height: 20px; color: #4A7C59; }
+    .hint { font-size: .8rem; color: #A08A6B; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">PsiConecta</div>
+    <button class="btn-logout" id="btnLogout">Sair</button>
+  </div>
+
+  <div class="card">
+    <h1>Meu Perfil Profissional</h1>
+    <p class="sub">Preencha seus dados — eles aparecem no diretório público do site.</p>
+
+    <form id="profileForm">
+      <label>Nome completo</label>
+      <input type="text" id="nome" required>
+
+      <label>Abordagem terapêutica</label>
+      <input type="text" id="abordagem" placeholder="Ex.: Terapia Cognitivo-Comportamental (TCC)">
+
+      <label>CRP</label>
+      <input type="text" id="crp" placeholder="Ex.: CRP 07/32555">
+
+      <div class="row">
+        <div>
+          <label>Preço da sessão</label>
+          <input type="text" id="preco" placeholder="Ex.: R$ 150,00">
+        </div>
+        <div>
+          <label>WhatsApp (com DDI)</label>
+          <input type="text" id="whatsapp" placeholder="Ex.: 5551999999999">
+        </div>
+      </div>
+
+      <label>Especialidades (separadas por vírgula)</label>
+      <input type="text" id="tags" placeholder="Ex.: Ansiedade, Depressão, Relacionamentos">
+
+      <label>Texto de apresentação</label>
+      <textarea id="descricao" placeholder="Conte um pouco sobre seu trabalho e como você atende..."></textarea>
+
+      <button type="submit" class="btn-save">Salvar perfil</button>
+      <div id="status"></div>
+    </form>
+  </div>
+
+  <script>
+    // 1) Verifica se está logado
+    async function checkSession() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (!session) {
+        window.location.href = "login.html";
+        return null;
+      }
+      return session.user.id;
+    }
+
+    // 2) Carrega o perfil existente (se houver)
+    async function loadProfile(userId) {
+      const { data } = await supabaseClient
+        .from("perfis")
+        .select("*")
+        .eq("user_id", userId)
+        .maybeSingle();
+
+      if (data) {
+        document.getElementById("nome").value = data.nome || "";
+        document.getElementById("abordagem").value = data.abordagem || "";
+        document.getElementById("crp").value = data.crp || "";
+        document.getElementById("preco").value = data.preco || "";
+        document.getElementById("whatsapp").value = data.whatsapp || "";
+        document.getElementById("tags").value = (data.tags || []).join(", ");
+        document.getElementById("descricao").value = data.descricao || "";
+      }
+    }
+
+    // 3) Salva (cria ou atualiza) o perfil
+    async function saveProfile(userId, formData) {
+      const { error } = await supabaseClient
+        .from("perfis")
+        .upsert({ user_id: userId, ...formData });
+      return error;
+    }
+
+    // 4) Liga tudo
+    document.addEventListener("DOMContentLoaded", async () => {
+      const userId = await checkSession();
+      if (!userId) return;
+
+      await loadProfile(userId);
+
+      document.getElementById("profileForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const status = document.getElementById("status");
+        status.textContent = "Salvando...";
+
+        const formData = {
+          nome: document.getElementById("nome").value,
+          abordagem: document.getElementById("abordagem").value,
+          crp: document.getElementById("crp").value,
+          preco: document.getElementById("preco").value,
+          whatsapp: document.getElementById("whatsapp").value,
+          tags: document.getElementById("tags").value.split(",").map(t => t.trim()).filter(Boolean),
+          descricao: document.getElementById("descricao").value
+        };
+
+        const error = await saveProfile(userId, formData);
+        if (error) {
+          status.style.color = "#B23B2E";
+          status.textContent = "Erro ao salvar: " + error.message;
+        } else {
+          status.style.color = "#4A7C59";
+          status.textContent = "Perfil salvo com sucesso! ✅";
+        }
+      });
+
+      document.getElementById("btnLogout").addEventListener("click", async () => {
+        await supabaseClient.auth.signOut();
+        window.location.href = "login.html";
+      });
+    });
+  </script>
+</body>
+</html>

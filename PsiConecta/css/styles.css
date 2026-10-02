@@ -1347,3 +1347,18 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
   justify-content: center;
   text-align: center;
 }
+/* ===== Centralizar os cards de planos ===== */
+.plans-grid {
+  display: flex;
+  flex-wrap: wrap;            /* em telas pequenas, o 2º card desce em vez de quebrar */
+  justify-content: center;    /* centraliza os cards horizontalmente */
+  align-items: stretch;
+  gap: 24px;                  /* espaço entre os dois cards (ajuste à vontade) */
+  max-width: 920px;           /* largura máxima da grade */
+  margin: 0 auto;             /* centraliza a grade na página */
+}
+
+.plans-grid .plan-card {
+  flex: 1 1 340px;            /* cada card cresce, mas nunca fica fino demais */
+  max-width: 440px;           /* nem largo demais */
+}

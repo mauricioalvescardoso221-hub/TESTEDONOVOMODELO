@@ -664,7 +664,19 @@ const featuredProfiles = [
     preco: "R$ 150,00",
     whatsapp: "55997052670",
     linkPerfil: "#perfil-thayse"
+  },
+  {
+    nome: "Maurício",
+    foto: "assets/fotos/mauricio.jpg",
+    abordagem: "Terapia Cognitivo-Comportamental (TCC)",
+    crp: "CRP 00/00000",
+    descricao: "Atendimento acolhedor e objetivo, focado em ansiedade, depressão e autoconhecimento para adultos e jovens.",
+    tags: ["Ansiedade", "Depressão", "Autoconhecimento"],
+    preco: "R$ 120,00",
+    whatsapp: "5500000000000",
+    linkPerfil: "#perfil-mauricio"
   }
+];
   // ,{ nome: "...", foto: "...", abordagem: "...", crp: "...", descricao: "...",
   //    tags: ["...", "..."], preco: "R$ ...", whatsapp: "55...", linkPerfil: "#perfil-..." }
 ];

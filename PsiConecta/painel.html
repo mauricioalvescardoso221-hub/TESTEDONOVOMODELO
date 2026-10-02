@@ -48,6 +48,14 @@
     }
     #status { margin-top: 14px; font-size: .9rem; text-align: center; min-height: 20px; color: #4A7C59; }
     .hint { font-size: .8rem; color: #A08A6B; margin-top: 4px; }
+    .photo-area { display: flex; align-items: center; gap: 16px; margin-top: 14px; }
+    .photo-preview {
+      width: 84px; height: 84px; border-radius: 50%; object-fit: cover;
+      border: 2px solid #D6C7A9; background: #F1EAE0; display: flex;
+      align-items: center; justify-content: center; color: #A08A6B;
+      font-size: .75rem; text-align: center; overflow: hidden;
+    }
+    .photo-preview img { width: 100%; height: 100%; object-fit: cover; }
   </style>
 </head>
 <body>
@@ -58,9 +66,18 @@
 
   <div class="card">
     <h1>Meu Perfil Profissional</h1>
-    <p class="sub">Preencha seus dados — eles aparecem no diretório público do site.</p>
+    <p class="sub">Preencha seus dados e escolha sua foto — tudo aparece no diretório público do site.</p>
 
     <form id="profileForm">
+      <div class="photo-area">
+        <div class="photo-preview" id="photoPreview">Sem<br>foto</div>
+        <div style="flex:1;">
+          <label>Foto de perfil</label>
+          <input type="file" id="fotoInput" accept="image/*">
+          <p class="hint">Formatos comuns: JPG, PNG, JPEG.</p>
+        </div>
+      </div>
+
       <label>Nome completo</label>
       <input type="text" id="nome" required>
 
@@ -93,72 +110,85 @@
   </div>
 
   <script>
-    // 1) Verifica se está logado
+    let userId = null;
+    let foto_url = "";
+
     async function checkSession() {
       const { data: { session } } = await supabaseClient.auth.getSession();
-      if (!session) {
-        window.location.href = "login.html";
-        return null;
-      }
-      return session.user.id;
+      if (!session) { window.location.href = "login.html"; return; }
+      userId = session.user.id;
     }
 
-    // 2) Carrega o perfil existente (se houver)
-    async function loadProfile(userId) {
+    function showPhoto(url) {
+      if (!url) return;
+      const box = document.getElementById("photoPreview");
+      box.innerHTML = `<img src="${url}" alt="Foto">`;
+    }
+
+    async function uploadPhoto(file) {
+      const path = `${userId}/${Date.now()}-${file.name}`;
+      const { error } = await supabaseClient.storage.from("fotos").upload(path, file);
+      if (error) throw error;
+      const { data } = supabaseClient.storage.from("fotos").getPublicUrl(path);
+      return data.publicUrl;
+    }
+
+    async function loadProfile() {
       const { data } = await supabaseClient
-        .from("perfis")
-        .select("*")
-        .eq("user_id", userId)
-        .maybeSingle();
-
-      if (data) {
-        document.getElementById("nome").value = data.nome || "";
-        document.getElementById("abordagem").value = data.abordagem || "";
-        document.getElementById("crp").value = data.crp || "";
-        document.getElementById("preco").value = data.preco || "";
-        document.getElementById("whatsapp").value = data.whatsapp || "";
-        document.getElementById("tags").value = (data.tags || []).join(", ");
-        document.getElementById("descricao").value = data.descricao || "";
-      }
+        .from("perfis").select("*").eq("user_id", userId).maybeSingle();
+      if (!data) return;
+      document.getElementById("nome").value = data.nome || "";
+      document.getElementById("abordagem").value = data.abordagem || "";
+      document.getElementById("crp").value = data.crp || "";
+      document.getElementById("preco").value = data.preco || "";
+      document.getElementById("whatsapp").value = data.whatsapp || "";
+      document.getElementById("tags").value = (data.tags || []).join(", ");
+      document.getElementById("descricao").value = data.descricao || "";
+      foto_url = data.foto_url || "";
+      showPhoto(foto_url);
     }
 
-    // 3) Salva (cria ou atualiza) o perfil
-    async function saveProfile(userId, formData) {
-      const { error } = await supabaseClient
-        .from("perfis")
-        .upsert({ user_id: userId, ...formData });
-      return error;
-    }
-
-    // 4) Liga tudo
     document.addEventListener("DOMContentLoaded", async () => {
-      const userId = await checkSession();
+      await checkSession();
       if (!userId) return;
+      await loadProfile();
 
-      await loadProfile(userId);
+      document.getElementById("fotoInput").addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) showPhoto(URL.createObjectURL(file));
+      });
 
       document.getElementById("profileForm").addEventListener("submit", async (e) => {
         e.preventDefault();
         const status = document.getElementById("status");
         status.textContent = "Salvando...";
 
-        const formData = {
-          nome: document.getElementById("nome").value,
-          abordagem: document.getElementById("abordagem").value,
-          crp: document.getElementById("crp").value,
-          preco: document.getElementById("preco").value,
-          whatsapp: document.getElementById("whatsapp").value,
-          tags: document.getElementById("tags").value.split(",").map(t => t.trim()).filter(Boolean),
-          descricao: document.getElementById("descricao").value
-        };
+        try {
+          const fileInput = document.getElementById("fotoInput");
+          if (fileInput.files.length > 0) {
+            foto_url = await uploadPhoto(fileInput.files[0]);
+          }
 
-        const error = await saveProfile(userId, formData);
-        if (error) {
-          status.style.color = "#B23B2E";
-          status.textContent = "Erro ao salvar: " + error.message;
-        } else {
+          const formData = {
+            user_id: userId,
+            nome: document.getElementById("nome").value,
+            abordagem: document.getElementById("abordagem").value,
+            crp: document.getElementById("crp").value,
+            preco: document.getElementById("preco").value,
+            whatsapp: document.getElementById("whatsapp").value,
+            tags: document.getElementById("tags").value.split(",").map(t => t.trim()).filter(Boolean),
+            descricao: document.getElementById("descricao").value,
+            foto_url
+          };
+
+          const { error } = await supabaseClient.from("perfis").upsert(formData);
+          if (error) throw error;
+
           status.style.color = "#4A7C59";
           status.textContent = "Perfil salvo com sucesso! ✅";
+        } catch (err) {
+          status.style.color = "#B23B2E";
+          status.textContent = "Erro ao salvar: " + err.message;
         }
       });
 

@@ -1313,3 +1313,16 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       font-weight: 600;
       margin-top: 8px;
     }
+/* ===== Logo: aproximar "PsiConecta" e "psicoterapia" ===== */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-text span {
+  display: block;
+  line-height: 1.2;
+  margin-top: -2px;
+  text-align: left;
+}

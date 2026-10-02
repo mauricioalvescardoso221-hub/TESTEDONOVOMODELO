@@ -165,6 +165,17 @@ const featuredProfiles = [
     preco: "R$ 150,00",
     whatsapp: "55997052670",
     linkPerfil: "#perfil-thayse"
+  },
+  {
+    nome: "Maurício",
+    foto: "",
+    abordagem: "Terapia Cognitivo-Comportamental (TCC)",
+    crp: "CRP 00/00000",
+    descricao: "Atendimento acolhedor e objetivo, focado em ansiedade, depressão e autoconhecimento para adultos e jovens.",
+    tags: ["Ansiedade", "Depressão", "Autoconhecimento"],
+    preco: "R$ 120,00",
+    whatsapp: "5500000000000",
+    linkPerfil: "#perfil-mauricio"
   }
 ];
   // ,{ nome: "...", foto: "...", abordagem: "...", crp: "...", descricao: "...",
@@ -186,16 +197,19 @@ function renderFeaturedCard() {
   const profile = featuredProfiles[index];
   const card = document.getElementById("featuredPsychologistCard");
   if (!card || !profile) return;
+  const photoMarkup = profile.foto
+    ? `<div class="profile-avatar-wrap featured-photo-wrap">
+        <div class="avatar-monogram thayse" hidden>TB</div>
+        <img src="${profile.foto}" alt="Foto de ${profile.nome}" class="profile-photo" onerror="this.hidden = true; this.previousElementSibling.hidden = false;">
+      </div>`
+    : `<div class="photo-placeholder photo-placeholder-featured" role="img" aria-label="Espaço reservado para foto de ${profile.nome}"></div>`;
   card.innerHTML = `
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
       <span class="badge-featured">Profissional em Destaque</span>
       <span class="badge-crp">Ativo ${profile.crp}</span>
     </div>
     <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;">
-      <div class="profile-avatar-wrap featured-photo-wrap">
-        <div class="avatar-monogram thayse" hidden>TB</div>
-        <img src="${profile.foto}" alt="Foto de ${profile.nome}" class="profile-photo" onerror="this.hidden = true; this.previousElementSibling.hidden = false;">
-      </div>
+${photoMarkup}
       <div>
         <h3 style="margin:0;font-size:1.25rem;">${profile.nome}</h3>
         <p style="margin:2px 0 0 0;font-size:0.85rem;color:var(--color-brown-mid);font-weight:600;">${profile.crp} • ${profile.abordagem}</p>

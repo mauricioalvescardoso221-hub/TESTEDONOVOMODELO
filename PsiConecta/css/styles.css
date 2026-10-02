@@ -699,6 +699,12 @@ table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 
       border-radius: 50%;
       background: var(--color-beige-soft);
     }
+    .photo-placeholder-featured {
+      width: 48px;
+      height: 48px;
+      flex-basis: 48px;
+      border-color: #D6C7A9;
+    }
     .photo-placeholder-large {
       width: 88px;
       height: 88px;

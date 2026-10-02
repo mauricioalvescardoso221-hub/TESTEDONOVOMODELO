@@ -679,7 +679,6 @@ const featuredProfiles = [
 ];
   // ,{ nome: "...", foto: "...", abordagem: "...", crp: "...", descricao: "...",
   //    tags: ["...", "..."], preco: "R$ ...", whatsapp: "55...", linkPerfil: "#perfil-..." }
-];
 
 // 2) TEMPO DA ROTAÇÃO AUTOMÁTICA (24 = 1x por dia | 6 = a cada 6h | 2 = a cada 2h)
 const ROTATION_HOURS = 6;
